@@ -98,7 +98,7 @@ The original fresh-VM test on older code does not close the current fresh-VM obl
 ## Full acceptance and portable handoff
 
 Use the sealed `Witness-Reproduction-f09aa63-v1.zip` attached to
-[the v0.9.0-partial prerelease](https://github.com/tjsingh143/witness-lab/releases/tag/v0.9.0-partial).
+[the sealed reproduction release](https://github.com/tjsingh143/witness-lab/releases/tag/v0.9.0-partial).
 It contains the tested runtime source and a deterministic coordinator; no original results database is imported.
 Its runtime is unchanged from `3d7a9f7`, even though the source snapshot identity is `f09aa63`.
 

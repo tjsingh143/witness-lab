@@ -18,7 +18,7 @@
 
 ## Published snapshot and presentation
 
-- The original phase-prompt kit is preserved locally and is intentionally absent from this publication. Read the current README and final engineering report before interpreting historical phase entries. The current release remains a partial-acceptance preview; documentation work does not close missing VM experiments.
+- The original phase-prompt kit is preserved locally and is intentionally absent from this publication. Read the current README and final engineering report before interpreting historical phase entries. The current presentation is the final delivered project. Release presentation is separate from verification: retain the measured 22/24 result and missing VM experiments in testing/limitations; never turn failed or unexecuted checks into passes.
 - Current explanations describe the implementation, observations, results and limitations directly. Add no personal or AI creator byline, ownership boast, or first-person implementation claim. This convention does not remove required third-party credits, original evidence, historical process records, Git metadata or the immutable original brief.
 - Keep review-package work bounded to the requested presentation and evidence selection. Preserve runtime code, acceptance criteria, original measurements, historical FAIL results, protected VMs and full local archives unless a separate task authorizes their modification.
 - When maintaining published documentation, update its export hashes and declare the edit in `PUBLICATION_PROVENANCE.json`. Preserve the original source object IDs and original hashes; never describe edited prose as an unchanged original record.

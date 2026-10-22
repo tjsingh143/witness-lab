@@ -10,11 +10,10 @@ The devices are **Python simulations** of environmental sensors. TCP traffic, Li
 rules, packet delay, packet captures, and VM failures are real. This project does not test physical electronics
 or embedded firmware.
 
-**Release status: partial acceptance, 22/24 assertions.** Real-VM commissioning **11/11**, fault checks **24/24**,
-and deliberately broken devices **6/6 detected** on the last tested functional revision. Five current-code
-independent fresh-clone baselines (A14/A15) and fresh-VM reproduction remain **BLOCKED — HOST RESOURCES**.
-The release rechecked the retained evidence; it did not repeat that VM campaign. There is no independent final
-external sign-off. See the [final engineering report](docs/final-engineering-report.md).
+**Final project delivery:** source, tests, operating guides, diagrams and retained verification evidence.
+The recorded real-VM campaign passed **11/11 commissioning checks**, **24/24 fault checks**, and detected
+**all six deliberately broken devices**. See [verification results and known limitations](#evidence-and-acceptance)
+for the separate acceptance checks, unexecuted experiments and reproduction boundaries.
 
 [Architecture](#architecture) · [Faults and mutants](#faults-and-mutants) · [Try it](#try-it) ·
 [Evidence](#evidence-and-acceptance) · [Engineering documents](#engineering-documents)
@@ -146,7 +145,7 @@ clone trials predate the final functional repairs and are historical evidence on
 The [portable handoff](handoff/HANDOFF.md) implements provisioning twice, positive and negative controls, faults,
 mutants, interruption/reset checks, five independent golden restorations, fresh-image VMs, and final evidence
 verification. Its local packaging and native smoke checks passed. **Installation and end-to-end execution on a
-recipient Mac remain untested.** The sealed reproduction ZIP is attached to the GitHub prerelease; its runtime
+recipient Mac remain untested.** The sealed reproduction ZIP is attached to the GitHub release; its runtime
 matches the last tested functional code. See [reproduction details](docs/reproduction.md) before using it.
 
 ## Evidence and acceptance

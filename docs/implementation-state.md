@@ -1068,3 +1068,17 @@ ZIP-dependent checks: **40 passed in 2.21 s**. A publication-manifest review cau
 redacted by the initial unpublished exporter; redaction is now documentation-only and executable byte equality
 is mandatory. The initial candidate is retained in `dist/github-publication`; the final clean snapshot is
 `dist/github-release`. No original history or runtime code was rewritten.
+
+## Final presentation and Drive review — 2026-10-22 (Pacific)
+
+Current presentation describes the final delivered Witness project without a person or AI creator byline.
+The overview no longer uses preview or partial-acceptance release framing. The measured 22/24 acceptance
+result, A14/A15 failures, separate fresh-image obligation, incomplete synthetic verifier and untested recipient
+execution remain explicit in verification sections. No acceptance predicate, runtime/test file, original brief,
+historical FAIL record or sealed release asset changes. The existing tag remains an archival identifier.
+
+The uploaded Drive review contained 49 files. Its checksums, 22 exact archival copies, six literal excerpts,
+36 source-backed claims and three SVGs were checked against the selected publication tree. Current navigation
+is updated to observed Drive URLs. This is presentation/package verification, not a new VM campaign or runtime
+suite. Source catalog/README consistency is checked for this documentation change. Export hashes are updated
+in PUBLICATION_PROVENANCE.json; original hashes and source objects remain unchanged.

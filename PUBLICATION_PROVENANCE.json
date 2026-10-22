@@ -41,9 +41,10 @@
       "git_blob": "e5e58e1ac0e784e5bd581a7403fefad9b1f76bb7",
       "git_mode": "100644",
       "original_sha256": "3b25f5cac21fcd286070bea06b3d867db9d92e11acf939df9a48bb0d60c384d1",
-      "export_sha256": "0b9769f13e2b49570f37923ac6aa34ca83e536e59dd81fc45eec0bf865286d89",
+      "export_sha256": "6394c967862b0ca7e9cf169a423cf1915e8828cad6d79d1203bd83a07094140f",
       "documentation_home_redacted": false,
-      "publication_edit": "Post-publication instruction maintenance; original source identity and bytes remain recorded separately."
+      "publication_edit": "Post-publication instruction maintenance; original source identity and bytes remain recorded separately.",
+      "post_publication_edited": true
     },
     {
       "path": "CLAUDE.md",
@@ -75,9 +76,10 @@
       "git_blob": "d00997c2c7c1c0930854c72613b791d7d33954c0",
       "git_mode": "100644",
       "original_sha256": "938581f5f095fa88bacaad163b4238044f36e4f97283eae8bda68c5a4a22d6fb",
-      "export_sha256": "1bfb2f4d50d19d1b190e8d94bf708718df81b41bedebb58a18c08eedc17bcf44",
+      "export_sha256": "64605ee87d666bc7ce1e4c30bec0b8f3fd72ecd5fc89c6c1eac989d453f3c6e2",
       "documentation_home_redacted": false,
-      "publication_edit": "Document the optional tcpdump prerequisite and explicitly reported skips for two offline source checks."
+      "publication_edit": "Document the optional tcpdump prerequisite and explicitly reported skips for two offline source checks.",
+      "post_publication_edited": true
     },
     {
       "path": "config/lima/witness-vm.yaml.tmpl",
@@ -164,16 +166,18 @@
       "git_blob": "733e5402c7bb4293f27ab13710625d37c2e3c11f",
       "git_mode": "100644",
       "original_sha256": "27dcdf710845b829df63e4a7bf94fbae846e9d32bd6f3ad4a081335cdfd7369a",
-      "export_sha256": "27dcdf710845b829df63e4a7bf94fbae846e9d32bd6f3ad4a081335cdfd7369a",
-      "documentation_home_redacted": false
+      "export_sha256": "1fb148831cd2890209f59f36c56945474de018ba9fd1a2760467222e263c4c71",
+      "documentation_home_redacted": false,
+      "post_publication_edited": true
     },
     {
       "path": "docs/implementation-state.md",
       "git_blob": "ee9d7ed3220860404aa7671d720704e2c226f0cf",
       "git_mode": "100644",
       "original_sha256": "886ff7f305e3aaf570dcf5f92e0338785bd5237e2574a2c08aec283933d2af7a",
-      "export_sha256": "886ff7f305e3aaf570dcf5f92e0338785bd5237e2574a2c08aec283933d2af7a",
-      "documentation_home_redacted": false
+      "export_sha256": "c799b58a9dc1c0a166ca5d00e69c691395a7bc4856859fe985b696eb1b1ffa01",
+      "documentation_home_redacted": false,
+      "post_publication_edited": true
     },
     {
       "path": "docs/independent-audit-remediation.md",
@@ -276,9 +280,10 @@
       "git_blob": "107e20e03b64454a44472e22ff7e3dc8d08bd8c8",
       "git_mode": "100644",
       "original_sha256": "f9b9385c97a89e6fd8748cb84bbedc832cd9a99777f9698c57d616807a04f9b4",
-      "export_sha256": "71b4c45202041caa81000b69db0ca29e9ae223f617252a807d7a27d541d85029",
+      "export_sha256": "12b7180c1486d873138148170869412983610da15bcca69c0ef2547ad61dcce3",
       "documentation_home_redacted": false,
-      "publication_edit": "Document the optional tcpdump prerequisite and explicitly reported skips for two offline source checks."
+      "publication_edit": "Document the optional tcpdump prerequisite and explicitly reported skips for two offline source checks.",
+      "post_publication_edited": true
     },
     {
       "path": "docs/requirements.md",
@@ -1371,6 +1376,38 @@
           "path": "docs/reproduction.md",
           "previous_export_sha256": "f9b9385c97a89e6fd8748cb84bbedc832cd9a99777f9698c57d616807a04f9b4",
           "export_sha256": "71b4c45202041caa81000b69db0ca29e9ae223f617252a807d7a27d541d85029"
+        }
+      ]
+    },
+    {
+      "date_pacific": "2026-10-22",
+      "baseline_github_commit": "e9cf3fb7b117277952f87e433b985b55cabf7074",
+      "scope": "Final project presentation and Drive review; verification outcomes and historical provenance preserved. Documentation only; no runtime or acceptance-criteria change.",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "previous_export_sha256": "0b9769f13e2b49570f37923ac6aa34ca83e536e59dd81fc45eec0bf865286d89",
+          "export_sha256": "6394c967862b0ca7e9cf169a423cf1915e8828cad6d79d1203bd83a07094140f"
+        },
+        {
+          "path": "README.md",
+          "previous_export_sha256": "1bfb2f4d50d19d1b190e8d94bf708718df81b41bedebb58a18c08eedc17bcf44",
+          "export_sha256": "64605ee87d666bc7ce1e4c30bec0b8f3fd72ecd5fc89c6c1eac989d453f3c6e2"
+        },
+        {
+          "path": "docs/final-engineering-report.md",
+          "previous_export_sha256": "27dcdf710845b829df63e4a7bf94fbae846e9d32bd6f3ad4a081335cdfd7369a",
+          "export_sha256": "1fb148831cd2890209f59f36c56945474de018ba9fd1a2760467222e263c4c71"
+        },
+        {
+          "path": "docs/implementation-state.md",
+          "previous_export_sha256": "886ff7f305e3aaf570dcf5f92e0338785bd5237e2574a2c08aec283933d2af7a",
+          "export_sha256": "c799b58a9dc1c0a166ca5d00e69c691395a7bc4856859fe985b696eb1b1ffa01"
+        },
+        {
+          "path": "docs/reproduction.md",
+          "previous_export_sha256": "71b4c45202041caa81000b69db0ca29e9ae223f617252a807d7a27d541d85029",
+          "export_sha256": "12b7180c1486d873138148170869412983610da15bcca69c0ef2547ad61dcce3"
         }
       ]
     }

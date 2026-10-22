@@ -1,7 +1,9 @@
 # Witness final engineering report
 
-**Release: v0.9.0-partial · partial acceptance · 22/24.** Prepared October 21, 2026 (release command timestamps
-continue into October 22 UTC). This is a functional software simulation lab with real Linux VM networking.
+**Final project delivery — Linux device commissioning and fault injection.** Original verification report
+prepared October 21, 2026; presentation updated October 22, 2026 (Pacific). Recorded command timestamps are UTC.
+This is a functional software simulation lab with real Linux VM networking. Detailed verification results and
+known limitations are retained below; final delivery does not assert that every acceptance obligation passed.
 It is not physical hardware testing, embedded firmware verification, or independent professional certification.
 
 ## Delivered behavior
@@ -132,6 +134,7 @@ subscription requirement. Local packaging and native checks passed; recipient in
 execution remain **UNTESTED**. Its archival builder needs the original Git objects, which the sanitized snapshot
 does not contain. The normal source and manual demo routes do not need those objects.
 
-GitHub publication is private initially. The tag `v0.9.0-partial` denotes a verification preview, not full
-acceptance or version 1.0. Only a measured run on a suitable host can close the remaining obligations. This
-bounded release assignment does not start another development or audit phase.
+GitHub publication is private. The project is presented as a final delivery with documented verification
+limits. The existing `v0.9.0-partial` tag is retained as the historical identifier of the sealed assets;
+changing presentation does not rewrite that tag, its source identity or the original evidence. Only measured
+runs on a suitable host can close the remaining verification obligations.
