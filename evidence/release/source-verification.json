@@ -1,0 +1,54 @@
+{
+  "witness-field:/usr/local/lib/witness/device.py": {
+    "source": "device/device.py",
+    "sha256_without_trailing_newlines": "af37ea194f23978852f03bca5e9d05c914fe1c192580654978eb541649888e32"
+  },
+  "witness-field:/usr/local/lib/witness/mutants.py": {
+    "source": "device/mutants.py",
+    "sha256_without_trailing_newlines": "f0447539225a20a12698e3449a3bb1b146dc0866da38d88e58c63c93dcaed642"
+  },
+  "witness-field:/etc/systemd/system/witness-device@.service": {
+    "source": "device/witness-device@.service",
+    "sha256_without_trailing_newlines": "f50704597efcdcf80acf0c52acaecb423378d7ebf1cb4be29941c56d25918310"
+  },
+  "witness-field:/usr/local/sbin/witness-faultctl": {
+    "source": "scripts/faultctl.py",
+    "sha256_without_trailing_newlines": "b688a31b999faaaf11ab939298dd97a1baea274bebe003390dfb3252240d9f8f"
+  },
+  "witness-field:/usr/local/sbin/witness-fault-ssh": {
+    "source": "scripts/witness-fault-ssh",
+    "sha256_without_trailing_newlines": "a1576efee52ea350dcc08865e506ee0ad69b5a57d7e8c29ec3502ffdc05c8078"
+  },
+  "witness-ctl:/usr/local/lib/witness-gateway/gateway/__init__.py": {
+    "source": "gateway/__init__.py",
+    "sha256_without_trailing_newlines": "5ab2d75232d278a57236064d6701d0f6a89221d1d4b8acf422a38ff7631ee78b"
+  },
+  "witness-ctl:/usr/local/lib/witness-gateway/gateway/gateway.py": {
+    "source": "gateway/gateway.py",
+    "sha256_without_trailing_newlines": "532bfbe7974c94562870923e3497798dc3a8c6c7495ce870e38d97a918663e5f"
+  },
+  "witness-ctl:/usr/local/lib/witness-gateway/runner/__init__.py": {
+    "source": "runner/__init__.py",
+    "sha256_without_trailing_newlines": "26ca72b67a4732a7b9cc6b19fe01ebb8dbff68088eb9fb64896bdd25b4e991ae"
+  },
+  "witness-ctl:/usr/local/lib/witness-gateway/runner/classify.py": {
+    "source": "runner/classify.py",
+    "sha256_without_trailing_newlines": "5d6e26bdaa0b5b781d6e10ffb2f5af4e377ed8377809b23c1318c50558bb47db"
+  },
+  "witness-ctl:/usr/local/lib/witness-gateway/runner/client.py": {
+    "source": "runner/client.py",
+    "sha256_without_trailing_newlines": "0f753745fe021755b2106c97db017bab484b4ad9282006f11cd62d9f9e3aad35"
+  },
+  "witness-ctl:/usr/local/lib/witness-gateway/scripts/lib/inventory.py": {
+    "source": "scripts/lib/inventory.py",
+    "sha256_without_trailing_newlines": "a52733898b473b2b0753e171438f8de0764bce3a8535ad47c5ca4749668976b1"
+  },
+  "witness-ctl:/etc/systemd/system/witness-gateway.service": {
+    "source": "gateway/witness-gateway.service",
+    "sha256_without_trailing_newlines": "7ac97cb79aaf7b33ffee855c1a4119e074520383d29ac62d0b16f39a1c0088fa"
+  },
+  "witness-ctl:/etc/witness/inventory.yaml": {
+    "source": "inventory.yaml",
+    "sha256_without_trailing_newlines": "3e7b256436f0919938db94e5ed08e24d2972a884cea3d3dd86fea7ebfa9f5d03"
+  }
+}

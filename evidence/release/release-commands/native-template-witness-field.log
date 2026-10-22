@@ -1,0 +1,8 @@
+START_UTC 2026-10-22T02:52:14.273993+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab
+ARGV ["limactl", "validate", "results/final-release-20261021/witness-field.yaml"]
+TIMEOUT_S 30.0
+time="2026-10-21T19:52:14-07:00" level=info msg="`results/final-release-20261021/witness-field.yaml`: OK"
+EXIT_CODE 0
+ELAPSED_S 0.04923583299932943
+END_UTC 2026-10-22T02:52:14.323121+00:00

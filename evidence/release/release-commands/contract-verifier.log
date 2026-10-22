@@ -1,0 +1,20 @@
+START_UTC 2026-10-22T02:51:55.131930+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab
+ARGV [".venv/bin/python", "-B", "scripts/verify_acceptance_contract.py", "--json", "results/final-release-20261021/contract-verification.json"]
+TIMEOUT_S 900.0
+controls checked: 9; checking declared mutations
+controls and mutations checked: 281; checking 120 seeded combinations
+checking weakening: A24 evidence-chain check disabled
+checking weakening: A23 run selection/receipt check disabled
+checking weakening: FV-01: flows only for results that kept exchanges
+checking weakening: FV-02: required devices from the devices table
+checking weakening: RC-4: latest evidence and A18 ignore the run plan
+checking weakening: I5.6: responses behind PASS and predicates not re-read
+checking weakening: I1.2: contamination flag trusted without a corroborating record
+checking weakening: I4.5: decision predicates and bounds not checked
+checking weakening: IC-01: an abort corroborated by any run started within it (itself included)
+checking weakening: IC-01 review F1: the overlap taken from the runs rows, not the session records
+TIMED_OUT
+EXIT_CODE 124
+ELAPSED_S 900.013705583
+END_UTC 2026-10-22T03:06:55.117952+00:00

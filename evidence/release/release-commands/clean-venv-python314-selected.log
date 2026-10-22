@@ -1,0 +1,7 @@
+START_UTC 2026-10-22T03:03:52.907746+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab/dist/github-publication
+ARGV ["env", "PYENV_VERSION=3.14.7", "python3.14", "-m", "venv", "--clear", ".venv"]
+TIMEOUT_S 120.0
+EXIT_CODE 0
+ELAPSED_S 2.2525352090015076
+END_UTC 2026-10-22T03:03:55.160128+00:00

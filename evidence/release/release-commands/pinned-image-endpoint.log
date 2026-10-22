@@ -1,0 +1,20 @@
+START_UTC 2026-10-22T02:48:55.753917+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab
+ARGV ["curl", "--head", "--fail", "--silent", "--show-error", "--max-time", "45", "https://s3.amazonaws.com/cloud-images-archive.ubuntu.com/releases/noble/release-20260705/ubuntu-24.04-server-cloudimg-arm64.img"]
+TIMEOUT_S 60.0
+HTTP/1.1 200 OK
+x-amz-id-2: 7t5wQe0R5jNuOPjt3x/MWDrK3VmIpXQS0XJOwCUaZk5rEVPfSMxvFszHlSNqjsOHg+Cy4znLxvBWwG4+gDRySferUOwzkX4I
+x-amz-request-id: M6Q6CH94DD2YCYV9
+Server: AmazonS3
+Date: Thu, 22 Oct 2026 02:48:57 GMT
+Last-Modified: Sun, 27 Sep 2026 09:00:06 GMT
+ETag: "5915ae525063d3a8164bcd9e6004836e-40"
+x-amz-server-side-encryption: AES256
+x-amz-meta-s3cmd-attrs: atime:1783960380/ctime:1783960378/gid:120/gname:jenkins/md5:07c21e9dae9c2b6d2dd280de0a63dfb3/mode:33188/mtime:1783960313/uid:114/uname:jenkins
+Accept-Ranges: bytes
+Content-Length: 615630848
+Content-Type: application/octet-stream
+
+EXIT_CODE 0
+ELAPSED_S 0.3930262499998207
+END_UTC 2026-10-22T02:48:56.146848+00:00

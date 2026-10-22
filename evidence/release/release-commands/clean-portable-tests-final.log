@@ -1,0 +1,9 @@
+START_UTC 2026-10-22T03:08:42.291937+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab/dist/github-publication
+ARGV ["env", "WITNESS_TEST_ZIP=<builder-home>/Desktop/Witness/witness-lab/dist/Witness-Reproduction-f09aa63-v1.zip", ".venv/bin/python", "-B", "-m", "pytest", "-q", "-p", "no:cacheprovider", "handoff/tests/test_portable.py"]
+TIMEOUT_S 120.0
+........................................                                 [100%]
+40 passed in 2.21s
+EXIT_CODE 0
+ELAPSED_S 2.4354454169988458
+END_UTC 2026-10-22T03:08:44.727251+00:00

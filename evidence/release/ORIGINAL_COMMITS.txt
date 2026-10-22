@@ -1,0 +1,48 @@
+38e51d54ea81f40fa69ed11eeebf0d347442c56f Witness spec: brief, protocol contract, requirements, inventory
+ad86fd3374e28db33b3ba77165e88a7e8cfe33dd Phase 1: two-VM Lima lab, routed device subnet, isolation, provisioning
+2daade0f907c15d406fc2bb87fa9e0674eb2efc2 Phase 2 code: device service, strict client/classifier, SQLite, live harness, MVP faults
+c3afe30d34f6617de35a86be6329115e596fc402 lab_vms unit: per-UID bytecode cache prefix (root-created /tmp/witness-pyc broke the unprivileged run)
+c64a7f89e34752398aacc7739339a1a0259505a2 lab_vms sync: git_dirty ignores results/ (never shipped to the guests)
+cbdee35bc70f62aa321fcc3ba741ba268464d03c Fault-mode file moved to root-owned /run/witness-fault (confused-deputy fix)
+51dca70856424d1c5539851e74bc514b94354f1f Keep SSH host keys across Lima boots; mark an aborted run only once
+06c92aa9720fc3ca109e1d77950266a9d4e29e11 lab_vms suite: quote extra pytest arguments
+dd79cd19f5ea57da85c2902b139f7d6d54b61e5f Phase 2 evidence, report and handoff
+fe85e803ea31283686b77bbcc4108ddc76c777ed Lab record: F4 prediction and F5 pre-run detail, written before any F4/F5 run
+f744803afb2f1b7819e79d4521b4a02726ce8593 Phase 3 in progress: handoff ledger and initial verification logs
+4f2b2b068b01a85eff1d8ced66b1235fc44e2b40 Phase 3: gateway, F3-F13 faults, REQ-08/09 measurement, clock served-time fix
+5bbe126556edca76bf434759e86535ea65a0fec3 Phase 3 evidence, report and handoff
+9de9813f0e82943ec1968cc66065d2e6d3f08061 Phase 4: mutant builds M1-M6, schema v3 (mutant runs), SQL analyses with median, acceptance assertions, F7 naming variant
+8002e08c3ff4d28e7d61dccca988095df91cebce faultctl: stale-connection threshold above the gateway's 4 s poll deadline
+51cfe5a37eb1867e9b75ed8e0e398d2efbb3121e C-ENVIRONMENT: a firmware version withheld by the device is a device failure, not a runner failure
+9414585a94a401d0f70b821b37a0190c83a1a33e analysis: control_nonpass counts only the stock device; run-level non-pass listed separately
+87d322b82d9936bc40d8eca49079169710d54457 lab_vms.sh: cmd_up RETURN trap no longer leaks into its caller (golden-restore rc=1)
+555db7885adf724804bdae7f629c5ed7a527d6d5 Phase 4 docs: README, commissioning SOP, RCA-001, lab-record section 14, requirements derivation note
+f525bad008b9c4051805d3952a4864c2f23f847c test_mutants: loopback idle timeout above the client read timeout (M3 test raced eof vs timeout)
+633df979d8de7e786a33d9f6223b4aa420fb4ad3 preflight: field capture-idle check; mutant run requires GREEN preflight; f5 self-test waits for full GREEN
+04c0fb5fad16723821b27c4e26365b41a41509f5 Phase 4 evidence and final handoff: mutant campaign, fresh-clone and from-scratch baselines, final runs 118-130, reports, acceptance table
+3c8de6c70850b5947c5cbf8bf172b812318da0d5 Independent audit (GPT-6 Astra) of 633df97/04c0fb5: verdict FAIL, findings F-01..F-08
+7e255ed258ee1200406c6b228667739e37d10a61 Remediate independent audit F-01..F-08 (code, regression tests, docs)
+d125939ebcdfec2c7772c402061faf344fec7d47 Remediation: ctl.sh helper; post-fix host verification, deploy checks, F-05 and F-01 VM verification logs
+c335c84afdb3b9aa9fb3c5c2fdcf3e72a7c7843a F-07: key capture-flow checks on the runner's ephemeral port when the connection was established
+3a9bbbccf35f7cf1889ccbad4158806a98417414 Remediation: F-03 lab-traffic deadline experiment script; fault suite (runs 132 infra, 133 24/24) and F12 early-restart repetition logs (134-138)
+4969e3032cd0057b0454f51973882828e6894866 Remediation: F-03 lab-traffic deadline verification and mutant M1-M6 rerun logs (runs 139-144)
+0943fd5a3d6b31ec019fc55e09bdea3331cd9ed8 Fix evidence overwrite in multi-application fault cases; report re-hashes evidence
+9f695e1a5f38a4df91ce1d18a92c8e3d20cd7c26 Remediation handoff: remediation record, ledger, README/lab record, reports and evidence of runs 131-150
+cacfac7a61cb15919d83132d5b91cae3d935ce7d Second independent audit (FAIL): report, ledger entry and text evidence, preserved verbatim
+12f027ee214825cfdd0cfd54ffbb3320e29e986c Fix second-audit R-01/R-02: acceptance rejects invalid, conflicting and incomplete evidence
+aa9e193e4a1dbf255a3788f4515afed5aff91866 Second-audit remediation: host reproduction/verification logs, regenerated reports, README/requirements notes
+a6d487f85643bd24a847b4ed743a45cd7e430a18 Second-audit remediation record, live VM evidence on aa9e193 and ledger update
+913e10a83a1ff53b2c2fc0cf4072ec2b0b603b47 Final independent verification (FAIL): report, ledger entry and evidence, preserved verbatim
+b9c334f9fd4bb86c33d9e2ebdd9d0f9c6107f6a1 Acceptance contract: obligations from catalog, inventory, run plan and receipts (FV-01/FV-02)
+7fca79161f4bb9ea834d2192525889fb4756165d verify_acceptance_contract.py: remove its temporary stores after the run
+4b1f658099f4592c052471ca0c3ae2f9916c2332 Acceptance-integrity repair record, live VM evidence on 7fca791 and ledger update
+93c029b94d5d5796530d2d7152c8a619b5f47755 Independent evidence-contract verification (IC-01, IC-02): report, ledger entry and evidence, preserved verbatim
+b5873ff5c9fc13015b638a477e297624b66c4cfe Fix IC-01/IC-02: corroborate aborts by session records; decision predicates from the case contract
+6bca0a301dffc56723bc4b88affbc51e0bb1d368 IC-01/IC-02 remediation record, verification and review evidence, ledger update
+f9dd5d6efaa9d47f777215cd2bcb97ede5fa0bbf Reject F3 baseline relabelling against session evidence
+592a481d4b1495c3a22953df0fcfc0d2a549b2c5 Require interrupted-run session evidence from durable facts
+872cf2956d8037b04f8e0bb9a12fd87a12cb6c03 Enforce the overall 30-second live case deadline before safety teardown
+3d7a9f74c81f80a1a84f790f7aa01f5254e5aa0f Record the canonical deadline marker on partial F12 attempts
+f09aa6322e5b8d923b9219b5f90ba32f50b17c0a Record real-VM acceptance experiments and resource-blocked completion
+97cf5742178345a5e2d5e21513f66ce50257256c Add portable source distribution and isolated external reproduction launcher
+c3d27b8f681498e1d8e14d1d4f463b5c9d75e9a9 Seal portable handoff release and record final non-VM verification

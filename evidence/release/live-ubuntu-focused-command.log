@@ -1,0 +1,10 @@
+START_UTC 2026-10-21T08:07:54.835841+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab
+ARGV ["env", "LIMA_HOME=<builder-home>/Desktop/Witness/witness-lab/.lima.nosync", "caffeinate", "-i", "limactl", "shell", "--workdir", "/opt/witness-lab", "witness-ctl", "--", "sudo", "timeout", "--kill-after=10", "210", "python3", "-B", "-m", "pytest", "-q", "-p", "no:cacheprovider", "tests/unit/test_live_case_budget.py", "tests/unit/test_case_deadline.py", "tests/unit/test_decision_predicates.py", "tests/unit/test_interrupted_environment.py"]
+TIMEOUT_S 240.0
+........................................................................ [ 56%]
+........................................................                 [100%]
+128 passed in 35.62s
+EXIT_CODE 0
+ELAPSED_S 35.90704008296598
+END_UTC 2026-10-21T08:08:30.741552+00:00

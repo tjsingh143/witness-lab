@@ -1,0 +1,2235 @@
+{
+  "runs": [
+    {
+      "run_id": 1,
+      "started_at": "2026-10-21T07:56:04.931Z",
+      "finished_at": "2026-10-21T07:56:26.787Z",
+      "kind": "baseline",
+      "git_sha": "3d7a9f74c81f80a1a84f790f7aa01f5254e5aa0f",
+      "git_dirty": 0,
+      "clean_env": 1,
+      "contaminated": 0,
+      "runner_host": "lima-witness-ctl",
+      "notes": "overnight final committed revision current-baseline",
+      "mutant_id": null
+    },
+    {
+      "run_id": 2,
+      "started_at": "2026-10-21T07:57:47.683Z",
+      "finished_at": "2026-10-21T07:59:36.560Z",
+      "kind": "fault",
+      "git_sha": "3d7a9f74c81f80a1a84f790f7aa01f5254e5aa0f",
+      "git_dirty": 0,
+      "clean_env": 1,
+      "contaminated": 0,
+      "runner_host": "lima-witness-ctl",
+      "notes": "overnight final committed revision current-faults",
+      "mutant_id": null
+    },
+    {
+      "run_id": 3,
+      "started_at": "2026-10-21T07:59:41.956Z",
+      "finished_at": "2026-10-21T08:00:04.166Z",
+      "kind": "mutant",
+      "git_sha": "3d7a9f74c81f80a1a84f790f7aa01f5254e5aa0f",
+      "git_dirty": 0,
+      "clean_env": 1,
+      "contaminated": 0,
+      "runner_host": "lima-witness-ctl",
+      "notes": "overnight current-revision mutant M1; dev-b stock control",
+      "mutant_id": "M1"
+    },
+    {
+      "run_id": 4,
+      "started_at": "2026-10-21T08:00:11.149Z",
+      "finished_at": "2026-10-21T08:00:33.672Z",
+      "kind": "mutant",
+      "git_sha": "3d7a9f74c81f80a1a84f790f7aa01f5254e5aa0f",
+      "git_dirty": 0,
+      "clean_env": 1,
+      "contaminated": 0,
+      "runner_host": "lima-witness-ctl",
+      "notes": "overnight current-revision mutant M2; dev-b stock control",
+      "mutant_id": "M2"
+    },
+    {
+      "run_id": 5,
+      "started_at": "2026-10-21T08:00:40.529Z",
+      "finished_at": "2026-10-21T08:01:22.240Z",
+      "kind": "mutant",
+      "git_sha": "3d7a9f74c81f80a1a84f790f7aa01f5254e5aa0f",
+      "git_dirty": 0,
+      "clean_env": 1,
+      "contaminated": 0,
+      "runner_host": "lima-witness-ctl",
+      "notes": "overnight current-revision mutant M3; dev-b stock control",
+      "mutant_id": "M3"
+    },
+    {
+      "run_id": 6,
+      "started_at": "2026-10-21T08:01:29.436Z",
+      "finished_at": "2026-10-21T08:01:52.691Z",
+      "kind": "mutant",
+      "git_sha": "3d7a9f74c81f80a1a84f790f7aa01f5254e5aa0f",
+      "git_dirty": 0,
+      "clean_env": 1,
+      "contaminated": 0,
+      "runner_host": "lima-witness-ctl",
+      "notes": "overnight current-revision mutant M4; dev-b stock control",
+      "mutant_id": "M4"
+    },
+    {
+      "run_id": 7,
+      "started_at": "2026-10-21T08:01:59.920Z",
+      "finished_at": "2026-10-21T08:02:22.603Z",
+      "kind": "mutant",
+      "git_sha": "3d7a9f74c81f80a1a84f790f7aa01f5254e5aa0f",
+      "git_dirty": 0,
+      "clean_env": 1,
+      "contaminated": 0,
+      "runner_host": "lima-witness-ctl",
+      "notes": "overnight current-revision mutant M5; dev-b stock control",
+      "mutant_id": "M5"
+    },
+    {
+      "run_id": 8,
+      "started_at": "2026-10-21T08:02:29.409Z",
+      "finished_at": "2026-10-21T08:03:02.276Z",
+      "kind": "mutant",
+      "git_sha": "3d7a9f74c81f80a1a84f790f7aa01f5254e5aa0f",
+      "git_dirty": 0,
+      "clean_env": 1,
+      "contaminated": 0,
+      "runner_host": "lima-witness-ctl",
+      "notes": "overnight current-revision mutant M6; dev-b stock control",
+      "mutant_id": "M6"
+    },
+    {
+      "run_id": 9,
+      "started_at": "2026-10-21T08:03:07.324Z",
+      "finished_at": "2026-10-21T08:03:29.462Z",
+      "kind": "baseline",
+      "git_sha": "3d7a9f74c81f80a1a84f790f7aa01f5254e5aa0f",
+      "git_dirty": 0,
+      "clean_env": 1,
+      "contaminated": 0,
+      "runner_host": "lima-witness-ctl",
+      "notes": "overnight final committed revision current-postmutant-baseline",
+      "mutant_id": null
+    }
+  ],
+  "baseline_controls": {
+    "run_ids": [
+      1,
+      9
+    ],
+    "decoded_exchanges": 96,
+    "reads": 80,
+    "max_exchange_latency_ms": 1.5064170002005994
+  },
+  "indexed_files_verified": 914,
+  "native_tcpdump_flow_checks": [
+    {
+      "result_id": 1,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 60178",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 2,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 59628",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 3,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 60208",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 4,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 59654",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 5,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 60226",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 6,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 59676",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 7,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 43480",
+      "expected": true,
+      "packets": 32
+    },
+    {
+      "result_id": 8,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 58570",
+      "expected": true,
+      "packets": 32
+    },
+    {
+      "result_id": 12,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020",
+      "expected": true,
+      "packets": 4
+    },
+    {
+      "result_id": 12,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020",
+      "expected": true,
+      "packets": 4
+    },
+    {
+      "result_id": 13,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 38992",
+      "expected": true,
+      "packets": 11
+    },
+    {
+      "result_id": 13,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 38992",
+      "expected": true,
+      "packets": 11
+    },
+    {
+      "result_id": 14,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 50066",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 14,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 50066",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 15,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020",
+      "expected": true,
+      "packets": 20
+    },
+    {
+      "result_id": 15,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020",
+      "expected": true,
+      "packets": 20
+    },
+    {
+      "result_id": 16,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 49712",
+      "expected": true,
+      "packets": 8
+    },
+    {
+      "result_id": 16,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 49712",
+      "expected": true,
+      "packets": 8
+    },
+    {
+      "result_id": 17,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 44426",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 17,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 44426",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 18,
+      "capture": "ctl",
+      "filter": "(none: port 5020, no address)",
+      "expected": false,
+      "packets": null
+    },
+    {
+      "result_id": 18,
+      "capture": "field",
+      "filter": "(none: port 5020, no address)",
+      "expected": false,
+      "packets": null
+    },
+    {
+      "result_id": 19,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 32834",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 19,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 32834",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 20,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 53178",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 20,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 53178",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 21,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 53204",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 21,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 53204",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 22,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5021",
+      "expected": true,
+      "packets": 4
+    },
+    {
+      "result_id": 22,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5021",
+      "expected": true,
+      "packets": 4
+    },
+    {
+      "result_id": 23,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.13 and port 5020",
+      "expected": true,
+      "packets": 2
+    },
+    {
+      "result_id": 23,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.13 and port 5020",
+      "expected": true,
+      "packets": 2
+    },
+    {
+      "result_id": 24,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020",
+      "expected": false,
+      "packets": 0
+    },
+    {
+      "result_id": 24,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020",
+      "expected": false,
+      "packets": 14
+    },
+    {
+      "result_id": 25,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020",
+      "expected": true,
+      "packets": 17
+    },
+    {
+      "result_id": 25,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020",
+      "expected": true,
+      "packets": 17
+    },
+    {
+      "result_id": 26,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020",
+      "expected": true,
+      "packets": 4
+    },
+    {
+      "result_id": 26,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020",
+      "expected": true,
+      "packets": 4
+    },
+    {
+      "result_id": 27,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 36140",
+      "expected": true,
+      "packets": 6
+    },
+    {
+      "result_id": 27,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 36140",
+      "expected": true,
+      "packets": 6
+    },
+    {
+      "result_id": 28,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 56536",
+      "expected": true,
+      "packets": 13
+    },
+    {
+      "result_id": 28,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 56536",
+      "expected": true,
+      "packets": 13
+    },
+    {
+      "result_id": 29,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 56560",
+      "expected": true,
+      "packets": 11
+    },
+    {
+      "result_id": 29,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 56560",
+      "expected": true,
+      "packets": 11
+    },
+    {
+      "result_id": 30,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 56588",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 30,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 56588",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 31,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 60114",
+      "expected": true,
+      "packets": 12
+    },
+    {
+      "result_id": 31,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 60114",
+      "expected": true,
+      "packets": 12
+    },
+    {
+      "result_id": 35,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 39866",
+      "expected": true,
+      "packets": 16
+    },
+    {
+      "result_id": 35,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 39866",
+      "expected": true,
+      "packets": 16
+    },
+    {
+      "result_id": 35,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 39876",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 35,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 39876",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 35,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 39882",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 35,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 39882",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 35,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 39892",
+      "expected": true,
+      "packets": 12
+    },
+    {
+      "result_id": 35,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 39892",
+      "expected": true,
+      "packets": 12
+    },
+    {
+      "result_id": 35,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 39908",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 35,
+      "capture": "field",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 39908",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 36,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 59958",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 36,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 59964",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 37,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 55694",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 38,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 36930",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 39,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 55728",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 40,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 36952",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 41,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 55754",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 42,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 36980",
+      "expected": true,
+      "packets": 32
+    },
+    {
+      "result_id": 43,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 55758",
+      "expected": true,
+      "packets": 32
+    },
+    {
+      "result_id": 47,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 54752",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 48,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 50760",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 49,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 34746",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 50,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 40342",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 51,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 34764",
+      "expected": true,
+      "packets": 20
+    },
+    {
+      "result_id": 51,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 34766",
+      "expected": true,
+      "packets": 18
+    },
+    {
+      "result_id": 52,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 40362",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 53,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 34794",
+      "expected": true,
+      "packets": 18
+    },
+    {
+      "result_id": 53,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 34806",
+      "expected": true,
+      "packets": 20
+    },
+    {
+      "result_id": 54,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 40388",
+      "expected": true,
+      "packets": 32
+    },
+    {
+      "result_id": 58,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 49872",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 58,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 49874",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 59,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 34812",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 60,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 49892",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 60,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 49902",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 61,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 33962",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 62,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 46958",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 62,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 46982",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 63,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 34006",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 64,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 42956",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 64,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 42968",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 65,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 52124",
+      "expected": true,
+      "packets": 32
+    },
+    {
+      "result_id": 69,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 45460",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 69,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 45464",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 70,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 60628",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 71,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 45484",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 71,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 43776",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 72,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 51954",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 73,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 43796",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 73,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 43806",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 74,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 51972",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 75,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 43842",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 75,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 43850",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 76,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 51978",
+      "expected": true,
+      "packets": 32
+    },
+    {
+      "result_id": 80,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 49486",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 81,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 55646",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 82,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 50686",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 83,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 59150",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 84,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 50714",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 84,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 50726",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 85,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 59182",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 86,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 50750",
+      "expected": true,
+      "packets": 12
+    },
+    {
+      "result_id": 86,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 50778",
+      "expected": true,
+      "packets": 12
+    },
+    {
+      "result_id": 87,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 59210",
+      "expected": true,
+      "packets": 32
+    },
+    {
+      "result_id": 91,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 59652",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 92,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 58762",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 93,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 59326",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 94,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 58784",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 95,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 59342",
+      "expected": true,
+      "packets": 15
+    },
+    {
+      "result_id": 95,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 59364",
+      "expected": true,
+      "packets": 15
+    },
+    {
+      "result_id": 96,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 53096",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 97,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 37672",
+      "expected": true,
+      "packets": 11
+    },
+    {
+      "result_id": 97,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 37690",
+      "expected": true,
+      "packets": 15
+    },
+    {
+      "result_id": 98,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 53132",
+      "expected": true,
+      "packets": 32
+    },
+    {
+      "result_id": 102,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 52350",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 103,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 48150",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 104,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 52358",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 105,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 48170",
+      "expected": true,
+      "packets": 10
+    },
+    {
+      "result_id": 106,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 51662",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 107,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 58416",
+      "expected": true,
+      "packets": 28
+    },
+    {
+      "result_id": 108,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.11 and port 5020 and port 51684",
+      "expected": true,
+      "packets": 32
+    },
+    {
+      "result_id": 109,
+      "capture": "ctl",
+      "filter": "tcp and host 10.77.2.12 and port 5020 and port 58448",
+      "expected": true,
+      "packets": 32
+    }
+  ],
+  "fault_controls": {
+    "run_id": 2,
+    "instances": 24,
+    "verified_removals": 25,
+    "categories": [
+      "CONNECT_TIMEOUT",
+      "CONN_REFUSED",
+      "CONN_RESET",
+      "MALFORMED",
+      "NO_ROUTE",
+      "PASS",
+      "PASS_SLOW",
+      "READ_TIMEOUT",
+      "RESOLVE_FAIL",
+      "STALE_DATA",
+      "WRONG_IDENTITY"
+    ]
+  },
+  "mutants": [
+    {
+      "mutant": "M1",
+      "run_id": 3,
+      "caught": [
+        "C-IDENTIFY",
+        "C-GATEWAY"
+      ],
+      "control_nonpass": 0
+    },
+    {
+      "mutant": "M2",
+      "run_id": 4,
+      "caught": [
+        "C-READ-CLOCK",
+        "C-READ-SERIES",
+        "C-GATEWAY"
+      ],
+      "control_nonpass": 0
+    },
+    {
+      "mutant": "M3",
+      "run_id": 5,
+      "caught": [
+        "C-IDENTIFY",
+        "C-HEALTH",
+        "C-READ-CLOCK",
+        "C-READ-SERIES",
+        "C-GATEWAY"
+      ],
+      "control_nonpass": 0
+    },
+    {
+      "mutant": "M4",
+      "run_id": 6,
+      "caught": [
+        "C-IDENTIFY",
+        "C-HEALTH",
+        "C-READ-CLOCK",
+        "C-READ-SERIES",
+        "C-GATEWAY"
+      ],
+      "control_nonpass": 0
+    },
+    {
+      "mutant": "M5",
+      "run_id": 7,
+      "caught": [
+        "C-READ-CLOCK",
+        "C-READ-SERIES",
+        "C-GATEWAY"
+      ],
+      "control_nonpass": 0
+    },
+    {
+      "mutant": "M6",
+      "run_id": 8,
+      "caught": [
+        "C-READ-CLOCK",
+        "C-READ-SERIES"
+      ],
+      "control_nonpass": 0
+    }
+  ],
+  "measurements": [
+    {
+      "run_id": 1,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 1,
+      "result_id": 10,
+      "name": "gateway_last_seen_age_ms",
+      "value": 619.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 1,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 2,
+      "result_id": 10,
+      "name": "gateway_poll_period_ms",
+      "value": 1999.4050000000243,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "1.9994 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 1,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 3,
+      "result_id": 10,
+      "name": "gateway_poll_duration_ms",
+      "value": 7.603792000281828,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 1,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 4,
+      "result_id": 11,
+      "name": "gateway_last_seen_age_ms",
+      "value": 309.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 1,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 5,
+      "result_id": 11,
+      "name": "gateway_poll_period_ms",
+      "value": 2002.071999999771,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "2.0021 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 1,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 6,
+      "result_id": 11,
+      "name": "gateway_poll_duration_ms",
+      "value": 13.729125000281783,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F7-NAME-SWAP",
+      "measurement_id": 7,
+      "result_id": 17,
+      "name": "gateway_wrong_identity_ms",
+      "value": 828.1105000000935,
+      "unit": "ms",
+      "bound": 6000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway transition to wrong_identity - fault command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F7-NAME-MISSING",
+      "measurement_id": 8,
+      "result_id": 18,
+      "name": "resolve_ms",
+      "value": 1.0571669999990263,
+      "unit": "ms",
+      "bound": 1000.0,
+      "clock": "ctl-monotonic",
+      "detail": "getaddrinfo(dev-a.lab) with the name removed"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F4-WRONG-ADDR",
+      "measurement_id": 9,
+      "result_id": 23,
+      "name": "field_Ip.InAddrErrors_delta",
+      "value": 2.0,
+      "unit": "count",
+      "bound": null,
+      "clock": "witness-field /proc/net/snmp",
+      "detail": "2 -> 4 between fault apply and after the probe"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F4-WRONG-ADDR",
+      "measurement_id": 10,
+      "result_id": 23,
+      "name": "field_Icmp.OutDestUnreachs_delta",
+      "value": 0.0,
+      "unit": "count",
+      "bound": null,
+      "clock": "witness-field /proc/net/snmp",
+      "detail": "6 -> 6 between fault apply and after the probe"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F4-WRONG-ADDR",
+      "measurement_id": 11,
+      "result_id": 23,
+      "name": "field_Tcp.OutRsts_delta",
+      "value": 0.0,
+      "unit": "count",
+      "bound": null,
+      "clock": "witness-field /proc/net/snmp",
+      "detail": "28 -> 28 between fault apply and after the probe"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F5-NO-ROUTE",
+      "measurement_id": 12,
+      "result_id": 24,
+      "name": "connect_ms",
+      "value": 0.004959000307280803,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "connect() to the routeless device subnet"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F8-DROP",
+      "measurement_id": 13,
+      "result_id": 25,
+      "name": "field_Tcp.OutRsts_delta",
+      "value": 0.0,
+      "unit": "count",
+      "bound": null,
+      "clock": "witness-field /proc/net/snmp",
+      "detail": "28 -> 28 between fault apply and after the probe"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F8-DROP",
+      "measurement_id": 14,
+      "result_id": 25,
+      "name": "field_Icmp.OutDestUnreachs_delta",
+      "value": 0.0,
+      "unit": "count",
+      "bound": null,
+      "clock": "witness-field /proc/net/snmp",
+      "detail": "6 -> 6 between fault apply and after the probe"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F13-SKEW",
+      "measurement_id": 15,
+      "result_id": 30,
+      "name": "read_skew_s",
+      "value": 29.999,
+      "unit": "s",
+      "bound": 2.0,
+      "clock": "device ts vs runner realtime",
+      "detail": ""
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F1-UNREACHABLE",
+      "measurement_id": 16,
+      "result_id": 32,
+      "name": "gateway_detection_ms.dev-a",
+      "value": 2239.610208999693,
+      "unit": "ms",
+      "bound": 6000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway transition to unreachable (its poll completion) - fault command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F1-UNREACHABLE",
+      "measurement_id": 17,
+      "result_id": 32,
+      "name": "gateway_detection_from_applied_ms.dev-a",
+      "value": 1728.0035839999073,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "same transition - fault confirmed applied (reference per REQ-09 wording)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F1-UNREACHABLE",
+      "measurement_id": 18,
+      "result_id": 32,
+      "name": "fault_apply_call_ms",
+      "value": 511.6066249997857,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "ctl: fault command sent -> confirmed"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F1-UNREACHABLE",
+      "measurement_id": 19,
+      "result_id": 32,
+      "name": "gateway_unreachable_api_observed_ms",
+      "value": 2329.538541999682,
+      "unit": "ms",
+      "bound": 6000.0,
+      "clock": "ctl-monotonic",
+      "detail": "runner's GET /devices sample first showing every affected device unreachable - command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F1-UNREACHABLE",
+      "measurement_id": 20,
+      "result_id": 32,
+      "name": "gateway_recovery_after_revert_ms.dev-a",
+      "value": 1569.2382090001047,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway transition back to healthy - revert command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F1-UNREACHABLE",
+      "measurement_id": 21,
+      "result_id": 32,
+      "name": "gateway_recovery_from_revert_returned_ms.dev-a",
+      "value": 1225.4471669998566,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "same transition - revert confirmed (negative: recovered while the revert call ran)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F5-UNREACHABLE",
+      "measurement_id": 22,
+      "result_id": 33,
+      "name": "gateway_detection_ms.dev-a",
+      "value": 1585.8598340000754,
+      "unit": "ms",
+      "bound": 6000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway transition to unreachable (its poll completion) - fault command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F5-UNREACHABLE",
+      "measurement_id": 23,
+      "result_id": 33,
+      "name": "gateway_detection_from_applied_ms.dev-a",
+      "value": 1548.2024180000735,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "same transition - fault confirmed applied (reference per REQ-09 wording)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F5-UNREACHABLE",
+      "measurement_id": 24,
+      "result_id": 33,
+      "name": "gateway_detection_ms.dev-b",
+      "value": 1585.218167000221,
+      "unit": "ms",
+      "bound": 6000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway transition to unreachable (its poll completion) - fault command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F5-UNREACHABLE",
+      "measurement_id": 25,
+      "result_id": 33,
+      "name": "gateway_detection_from_applied_ms.dev-b",
+      "value": 1547.5607510002192,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "same transition - fault confirmed applied (reference per REQ-09 wording)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F5-UNREACHABLE",
+      "measurement_id": 26,
+      "result_id": 33,
+      "name": "fault_apply_call_ms",
+      "value": 37.65741600000183,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "ctl: fault command sent -> confirmed"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F5-UNREACHABLE",
+      "measurement_id": 27,
+      "result_id": 33,
+      "name": "gateway_unreachable_api_observed_ms",
+      "value": 1623.0188760000601,
+      "unit": "ms",
+      "bound": 6000.0,
+      "clock": "ctl-monotonic",
+      "detail": "runner's GET /devices sample first showing every affected device unreachable - command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F5-UNREACHABLE",
+      "measurement_id": 28,
+      "result_id": 33,
+      "name": "gateway_recovery_after_revert_ms.dev-a",
+      "value": 1585.7585429998835,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway transition back to healthy - revert command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F5-UNREACHABLE",
+      "measurement_id": 29,
+      "result_id": 33,
+      "name": "gateway_recovery_from_revert_returned_ms.dev-a",
+      "value": 1568.5191259999556,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "same transition - revert confirmed (negative: recovered while the revert call ran)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F5-UNREACHABLE",
+      "measurement_id": 30,
+      "result_id": 33,
+      "name": "gateway_recovery_after_revert_ms.dev-b",
+      "value": 1591.8792100001156,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway transition back to healthy - revert command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F5-UNREACHABLE",
+      "measurement_id": 31,
+      "result_id": 33,
+      "name": "gateway_recovery_from_revert_returned_ms.dev-b",
+      "value": 1574.6397930001876,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "same transition - revert confirmed (negative: recovered while the revert call ran)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F8-UNREACHABLE",
+      "measurement_id": 32,
+      "result_id": 34,
+      "name": "gateway_detection_ms.dev-a",
+      "value": 2353.896459000225,
+      "unit": "ms",
+      "bound": 6000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway transition to unreachable (its poll completion) - fault command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F8-UNREACHABLE",
+      "measurement_id": 33,
+      "result_id": 34,
+      "name": "gateway_detection_from_applied_ms.dev-a",
+      "value": 2052.4428340004306,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "same transition - fault confirmed applied (reference per REQ-09 wording)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F8-UNREACHABLE",
+      "measurement_id": 34,
+      "result_id": 34,
+      "name": "fault_apply_call_ms",
+      "value": 301.45362499979456,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "ctl: fault command sent -> confirmed"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F8-UNREACHABLE",
+      "measurement_id": 35,
+      "result_id": 34,
+      "name": "gateway_unreachable_api_observed_ms",
+      "value": 2407.3071679999885,
+      "unit": "ms",
+      "bound": 6000.0,
+      "clock": "ctl-monotonic",
+      "detail": "runner's GET /devices sample first showing every affected device unreachable - command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F8-UNREACHABLE",
+      "measurement_id": 36,
+      "result_id": 34,
+      "name": "gateway_recovery_after_revert_ms.dev-a",
+      "value": 563.016124999649,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway transition back to healthy - revert command sent"
+    },
+    {
+      "run_id": 2,
+      "case_id": "GW-F8-UNREACHABLE",
+      "measurement_id": 37,
+      "result_id": 34,
+      "name": "gateway_recovery_from_revert_returned_ms.dev-a",
+      "value": 264.1697499998372,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "same transition - revert confirmed (negative: recovered while the revert call ran)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 38,
+      "result_id": 35,
+      "name": "device_healthy_after_restart_ms",
+      "value": 1.5472910004064033,
+      "unit": "ms",
+      "bound": 10000.0,
+      "clock": "ctl-monotonic",
+      "detail": "first PASS HEALTH - `apply restart` returned on ctl (REQ-08 t_restart)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 39,
+      "result_id": 35,
+      "name": "device_healthy_after_restart_cmd_ms",
+      "value": 524.6195830000033,
+      "unit": "ms",
+      "bound": 10000.0,
+      "clock": "ctl-monotonic",
+      "detail": "first PASS HEALTH - restart command sent (upper bound incl. the restart itself)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 40,
+      "result_id": 35,
+      "name": "restart_call_ms",
+      "value": 523.0722919995969,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "ctl: command sent -> returned (SSH + restart)"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 41,
+      "result_id": 35,
+      "name": "systemctl_restart_ms",
+      "value": 182.6,
+      "unit": "ms",
+      "bound": null,
+      "clock": "witness-field monotonic",
+      "detail": "pid 87520 -> 88856; listening at return=True"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 42,
+      "result_id": 35,
+      "name": "health_probes_until_pass",
+      "value": 1.0,
+      "unit": "count",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "first probe PASS"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 43,
+      "result_id": 35,
+      "name": "gateway_recovery_ms",
+      "value": 1062.3980839995966,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway poll that first saw the new process (last_restart.mono) - first PASS HEALTH; negative = the gateway saw it first"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 44,
+      "result_id": 35,
+      "name": "gateway_recovery_api_observed_ms",
+      "value": 1062.5230619998547,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": "runner's GET /devices sample showing it - first PASS HEALTH"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 45,
+      "result_id": 35,
+      "name": "early_restart_device_healthy_ms",
+      "value": 1.1817499998869607,
+      "unit": "ms",
+      "bound": 10000.0,
+      "clock": "ctl-monotonic",
+      "detail": "second (early) restart: first PASS HEALTH - `apply restart` returned on ctl"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 46,
+      "result_id": 35,
+      "name": "early_restart_gateway_recovery_ms",
+      "value": 1487.3350000002574,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": "gateway poll that detected the second restart (last_restart.mono) - its first PASS HEALTH"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 47,
+      "result_id": 35,
+      "name": "early_restart_gateway_recovery_api_observed_ms",
+      "value": 1579.0248520002024,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": "runner's GET /devices sample showing it healthy and the restart counted - first PASS HEALTH"
+    },
+    {
+      "run_id": 2,
+      "case_id": "FT-F12-RESTART",
+      "measurement_id": 48,
+      "result_id": 35,
+      "name": "early_restart_uptime_rise_s",
+      "value": 0.4209999999999998,
+      "unit": "s",
+      "bound": null,
+      "clock": "device uptime_s (gateway samples)",
+      "detail": "gateway's uptime after - before the second restart; rule uptime_advanced_less_than_elapsed; > 0 = the pre-remediation 'uptime decreased' rule could not see it. Gateway last saw the young process at uptime 1.116 s, seq 2; first probe after the restart PASS"
+    },
+    {
+      "run_id": 3,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 49,
+      "result_id": 45,
+      "name": "gateway_last_seen_age_ms",
+      "value": 114.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 3,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 50,
+      "result_id": 45,
+      "name": "gateway_poll_period_ms",
+      "value": 1999.8754999999164,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "3.9998 s over 2 slot(s), P=2.0"
+    },
+    {
+      "run_id": 3,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 51,
+      "result_id": 45,
+      "name": "gateway_poll_duration_ms",
+      "value": 6.415374999960477,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 3,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 52,
+      "result_id": 46,
+      "name": "gateway_last_seen_age_ms",
+      "value": 1792.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 3,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 53,
+      "result_id": 46,
+      "name": "gateway_poll_period_ms",
+      "value": 2004.5270000000528,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "2.0045 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 3,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 54,
+      "result_id": 46,
+      "name": "gateway_poll_duration_ms",
+      "value": 9.102000000439148,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 4,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 55,
+      "result_id": 56,
+      "name": "gateway_last_seen_age_ms",
+      "value": 1412.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 4,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 56,
+      "result_id": 56,
+      "name": "gateway_poll_period_ms",
+      "value": 1997.657999999774,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "1.9977 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 4,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 57,
+      "result_id": 56,
+      "name": "gateway_poll_duration_ms",
+      "value": 19.532499999968422,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 4,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 58,
+      "result_id": 57,
+      "name": "gateway_last_seen_age_ms",
+      "value": 1232.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 4,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 59,
+      "result_id": 57,
+      "name": "gateway_poll_period_ms",
+      "value": 1995.328999999856,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "1.9953 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 4,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 60,
+      "result_id": 57,
+      "name": "gateway_poll_duration_ms",
+      "value": 8.88391699982094,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 5,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 61,
+      "result_id": 67,
+      "name": "gateway_last_seen_age_ms",
+      "value": 2187.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 5,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 62,
+      "result_id": 67,
+      "name": "gateway_poll_period_ms",
+      "value": 1997.186000000056,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "3.9944 s over 2 slot(s), P=2.0"
+    },
+    {
+      "run_id": 5,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 63,
+      "result_id": 67,
+      "name": "gateway_poll_duration_ms",
+      "value": 2003.5835009998664,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 5,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 64,
+      "result_id": 68,
+      "name": "gateway_last_seen_age_ms",
+      "value": 1850.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 5,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 65,
+      "result_id": 68,
+      "name": "gateway_poll_period_ms",
+      "value": 1997.6659999997537,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "1.9977 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 5,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 66,
+      "result_id": 68,
+      "name": "gateway_poll_duration_ms",
+      "value": 6.163583999750699,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 6,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 67,
+      "result_id": 78,
+      "name": "gateway_last_seen_age_ms",
+      "value": 489.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 6,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 68,
+      "result_id": 78,
+      "name": "gateway_poll_period_ms",
+      "value": 2006.3829999999143,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "2.0064 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 6,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 69,
+      "result_id": 78,
+      "name": "gateway_poll_duration_ms",
+      "value": 6.118709000020317,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 6,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 70,
+      "result_id": 79,
+      "name": "gateway_last_seen_age_ms",
+      "value": 327.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 6,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 71,
+      "result_id": 79,
+      "name": "gateway_poll_period_ms",
+      "value": 2007.216999999855,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "2.0072 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 6,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 72,
+      "result_id": 79,
+      "name": "gateway_poll_duration_ms",
+      "value": 12.574833000144281,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 7,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 73,
+      "result_id": 89,
+      "name": "gateway_last_seen_age_ms",
+      "value": 457.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 7,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 74,
+      "result_id": 89,
+      "name": "gateway_poll_period_ms",
+      "value": 1998.8549999998213,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "1.9989 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 7,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 75,
+      "result_id": 89,
+      "name": "gateway_poll_duration_ms",
+      "value": 8.488040999964142,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 7,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 76,
+      "result_id": 90,
+      "name": "gateway_last_seen_age_ms",
+      "value": 244.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 7,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 77,
+      "result_id": 90,
+      "name": "gateway_poll_period_ms",
+      "value": 1999.9275000000125,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "3.9999 s over 2 slot(s), P=2.0"
+    },
+    {
+      "run_id": 7,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 78,
+      "result_id": 90,
+      "name": "gateway_poll_duration_ms",
+      "value": 8.828042000004643,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 8,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 79,
+      "result_id": 100,
+      "name": "gateway_last_seen_age_ms",
+      "value": 61.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 8,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 80,
+      "result_id": 100,
+      "name": "gateway_poll_period_ms",
+      "value": 2001.3146666666821,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "6.0039 s over 3 slot(s), P=2.0"
+    },
+    {
+      "run_id": 8,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 81,
+      "result_id": 100,
+      "name": "gateway_poll_duration_ms",
+      "value": 9.481083999617113,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 8,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 82,
+      "result_id": 101,
+      "name": "gateway_last_seen_age_ms",
+      "value": 1826.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 8,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 83,
+      "result_id": 101,
+      "name": "gateway_poll_period_ms",
+      "value": 1995.7429999999476,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "1.9957 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 8,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 84,
+      "result_id": 101,
+      "name": "gateway_poll_duration_ms",
+      "value": 18.48545800021384,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 9,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 85,
+      "result_id": 111,
+      "name": "gateway_last_seen_age_ms",
+      "value": 1272.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 9,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 86,
+      "result_id": 111,
+      "name": "gateway_poll_period_ms",
+      "value": 1991.5879999998651,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "1.9916 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 9,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 87,
+      "result_id": 111,
+      "name": "gateway_poll_duration_ms",
+      "value": 11.383541999748559,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 9,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 88,
+      "result_id": 112,
+      "name": "gateway_last_seen_age_ms",
+      "value": 933.0,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    },
+    {
+      "run_id": 9,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 89,
+      "result_id": 112,
+      "name": "gateway_poll_period_ms",
+      "value": 2005.2749999999833,
+      "unit": "ms",
+      "bound": null,
+      "clock": "ctl-monotonic",
+      "detail": "2.0053 s over 1 slot(s), P=2.0"
+    },
+    {
+      "run_id": 9,
+      "case_id": "C-GATEWAY",
+      "measurement_id": 90,
+      "result_id": 112,
+      "name": "gateway_poll_duration_ms",
+      "value": 9.14012500015815,
+      "unit": "ms",
+      "bound": 4000.0,
+      "clock": "ctl-monotonic",
+      "detail": ""
+    }
+  ],
+  "independently_derived_gateway_times": [
+    {
+      "case": "GW-F1-UNREACHABLE",
+      "device": "dev-a",
+      "detection_ms": 2239.6105969996825
+    },
+    {
+      "case": "GW-F5-UNREACHABLE",
+      "device": "dev-a",
+      "detection_ms": 1585.8599749999485
+    },
+    {
+      "case": "GW-F5-UNREACHABLE",
+      "device": "dev-b",
+      "detection_ms": 1585.218308000094
+    },
+    {
+      "case": "GW-F8-UNREACHABLE",
+      "device": "dev-a",
+      "detection_ms": 2353.896728000109
+    },
+    {
+      "case": "FT-F12-RESTART",
+      "phase": "first_pass_health",
+      "gateway_recovery_ms": 1062.3940219998076,
+      "restart_rule": "uptime_decreased"
+    },
+    {
+      "case": "FT-F12-RESTART",
+      "phase": "first_pass_health_2",
+      "gateway_recovery_ms": 1487.3321479999504,
+      "restart_rule": "uptime_advanced_less_than_elapsed"
+    }
+  ],
+  "verdict": "PASS for the explicit checks above; fresh-clone and fresh-VM requirements remain unverified"
+}

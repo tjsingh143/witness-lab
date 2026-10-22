@@ -1,0 +1,151 @@
+{
+  "utc": "2026-10-22T02:47:04.707321+00:00",
+  "free_bytes": 15129051136,
+  "memory_bytes": 8589934592,
+  "swap": "vm.swapusage: total = 5120.00M  used = 3893.38M  free = 1226.62M  (encrypted)",
+  "pressure_level": 2,
+  "memory_pressure": "The system has 8589934592 (524288 pages with a page size of 16384).\n\nStats: \nPages free: 9712 \nPages purgeable: 26 \nPages purged: 5717341 \n\nSwap I/O:\nSwapins: 2377527 \nSwapouts: 2952075 \n\nPage Q counts:\nPages active: 104388 \nPages inactive: 102091 \nPages speculative: 1758 \nPages throttled: 0 \nPages wired down: 83769 \n\nCompressor Stats:\nPages used by compressor: 186650 \nPages decompressed: 103087324 \nPages compressed: 113397409 \n\nFile I/O:\nPageins: 15386519 \nPageouts: 184216 \n\nSystem-wide memory free percentage: 44%\n",
+  "vms": [
+    {
+      "name": "witness-ctl",
+      "status": "Stopped",
+      "protected": true,
+      "logical_bytes": 10737418240,
+      "allocated_bytes": 3047247872,
+      "inode": 15820381,
+      "mtime_ns": 1792570187080070487
+    },
+    {
+      "name": "witness-ctl-golden",
+      "status": "Stopped",
+      "protected": true,
+      "logical_bytes": 10737418240,
+      "allocated_bytes": 2480611328,
+      "inode": 16155138,
+      "mtime_ns": 1792242793720968780
+    },
+    {
+      "name": "witness-ctl-golden-p2",
+      "status": "Stopped",
+      "protected": true,
+      "logical_bytes": 10737418240,
+      "allocated_bytes": 2408054784,
+      "inode": 15853055,
+      "mtime_ns": 1792216685504739000
+    },
+    {
+      "name": "witness-field",
+      "status": "Stopped",
+      "protected": true,
+      "logical_bytes": 10737418240,
+      "allocated_bytes": 3074457600,
+      "inode": 15820507,
+      "mtime_ns": 1792570188634463658
+    },
+    {
+      "name": "witness-field-golden",
+      "status": "Stopped",
+      "protected": true,
+      "logical_bytes": 10737418240,
+      "allocated_bytes": 2365112320,
+      "inode": 16155150,
+      "mtime_ns": 1792242795626014289
+    },
+    {
+      "name": "witness-field-golden-p2",
+      "status": "Stopped",
+      "protected": true,
+      "logical_bytes": 10737418240,
+      "allocated_bytes": 2355621888,
+      "inode": 15853043,
+      "mtime_ns": 1792216688317588158
+    }
+  ],
+  "lima_download_cache": [
+    {
+      "cache_id": "d03275c28027b09b42425b5da8720113d77e39ee7a9aa709496439912ce463cb",
+      "url": "https://cloud-images.ubuntu.com/releases/noble/release-20260911/ubuntu-24.04-server-cloudimg-arm64.img",
+      "digest": "sha256:7b682958a67ff5de068e36de6af8b75fa645d296af5a70d6500527f6a33781db",
+      "files": [
+        {
+          "name": "sha256.digest",
+          "bytes": 71,
+          "allocated_bytes": 4096
+        },
+        {
+          "name": "url",
+          "bytes": 102,
+          "allocated_bytes": 4096
+        },
+        {
+          "name": "time",
+          "bytes": 29,
+          "allocated_bytes": 4096
+        },
+        {
+          "name": "type",
+          "bytes": 24,
+          "allocated_bytes": 4096
+        },
+        {
+          "name": "data",
+          "bytes": 619621888,
+          "allocated_bytes": 619622400
+        },
+        {
+          "name": "imgconv/raw.digest",
+          "bytes": 71,
+          "allocated_bytes": 4096
+        },
+        {
+          "name": "imgconv/raw",
+          "bytes": 3758096384,
+          "allocated_bytes": 2042036224
+        }
+      ]
+    },
+    {
+      "cache_id": "a86fcad92c34622c13997952c2e003f9ccca1cf26abb4ad626c3e04f268f4dfb",
+      "url": "https://cloud-images.ubuntu.com/releases/noble/release-20260705/ubuntu-24.04-server-cloudimg-arm64.img",
+      "digest": "sha256:7df0201546f75b8bcc1044594c806c35749421ad3c9bc1be2a3ab806cfae39cc",
+      "files": [
+        {
+          "name": "sha256.digest",
+          "bytes": 71,
+          "allocated_bytes": 4096
+        },
+        {
+          "name": "url",
+          "bytes": 102,
+          "allocated_bytes": 4096
+        },
+        {
+          "name": "time",
+          "bytes": 29,
+          "allocated_bytes": 4096
+        },
+        {
+          "name": "type",
+          "bytes": 24,
+          "allocated_bytes": 4096
+        },
+        {
+          "name": "data",
+          "bytes": 615630848,
+          "allocated_bytes": 615632896
+        },
+        {
+          "name": "imgconv/raw.digest",
+          "bytes": 71,
+          "allocated_bytes": 4096
+        },
+        {
+          "name": "imgconv/raw",
+          "bytes": 3758096384,
+          "allocated_bytes": 1987100672
+        }
+      ]
+    }
+  ],
+  "homebrew_download_allocated_bytes": 962023424
+}

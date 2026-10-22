@@ -1,0 +1,30 @@
+[
+  {
+    "run": 1,
+    "device": "dev-a",
+    "uptime_before_s": 867.884,
+    "uptime_after_s": 867.887,
+    "journal_pid": "43986"
+  },
+  {
+    "run": 9,
+    "device": "dev-a",
+    "uptime_before_s": 13.715,
+    "uptime_after_s": 13.718,
+    "journal_pid": "107513"
+  },
+  {
+    "run": 1,
+    "device": "dev-b",
+    "uptime_before_s": 2195.373,
+    "uptime_after_s": 2195.376,
+    "journal_pid": "666"
+  },
+  {
+    "run": 9,
+    "device": "dev-b",
+    "uptime_before_s": 2617.998,
+    "uptime_after_s": 2618.001,
+    "journal_pid": "666"
+  }
+]

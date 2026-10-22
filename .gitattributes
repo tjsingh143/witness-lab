@@ -1,0 +1,6 @@
+# Preserve these original files byte-for-byte in the publication snapshot.
+# Their historical extra EOF newline is allowed; other whitespace checks remain.
+docs/acceptance-integrity-repair.md whitespace=-blank-at-eof
+tests/unit/test_acceptance_evidence.py whitespace=-blank-at-eof
+# Raw recorder output is retained verbatim, including HTTP CRLF and pytest text.
+results/final-release-20261021/logs/*.log -whitespace

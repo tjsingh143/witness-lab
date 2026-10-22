@@ -1,0 +1,17 @@
+{
+  "python_ast_files": 72,
+  "shell_syntax_files": 11,
+  "shellcheck": "NOT RUN: not installed on host; no VM started for lint",
+  "git_whitespace": "PASS",
+  "brief_unchanged": true,
+  "functional_code_equal_to_3d7a9f7": 75,
+  "acceptance_and_report_equal": "22/24, A14/A15 only",
+  "overnight_sealed_files_verified": 2527,
+  "apfs_probe": {
+    "source_bytes": 16777216,
+    "free_delta_after_clone_bytes": 0,
+    "free_delta_after_1MiB_write_bytes": 1052672,
+    "independent_source_unchanged": true,
+    "scope": "16MiB temporary file only; not a VM clone/restore experiment"
+  }
+}

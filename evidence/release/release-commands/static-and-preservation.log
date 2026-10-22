@@ -1,0 +1,12 @@
+START_UTC 2026-10-22T02:51:47.804751+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab
+ARGV [".venv/bin/python", "-B", "results/final-release-20261021/static_checks.py"]
+TIMEOUT_S 180.0
+Traceback (most recent call last):
+  File "<builder-home>/Desktop/Witness/witness-lab/results/final-release-20261021/static_checks.py", line 32, in <module>
+    assert audit==reports
+           ^^^^^^^^^^^^^^
+AssertionError
+EXIT_CODE 1
+ELAPSED_S 0.44533450000017183
+END_UTC 2026-10-22T02:51:48.249982+00:00

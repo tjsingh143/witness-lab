@@ -1,0 +1,28 @@
+START_UTC 2026-10-22T03:04:12.473880+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab/dist/github-publication
+ARGV [".venv/bin/python", "-m", "pip", "install", "-r", "requirements-dev.txt"]
+TIMEOUT_S 180.0
+Collecting pyyaml==6.0.3 (from -r requirements-dev.txt (line 1))
+  Using cached pyyaml-6.0.3-cp314-cp314-macosx_11_0_arm64.whl.metadata (2.4 kB)
+Collecting pytest==9.1.1 (from -r requirements-dev.txt (line 2))
+  Using cached pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting iniconfig>=1.0.1 (from pytest==9.1.1->-r requirements-dev.txt (line 2))
+  Using cached iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting packaging>=22 (from pytest==9.1.1->-r requirements-dev.txt (line 2))
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pluggy<2,>=1.5 (from pytest==9.1.1->-r requirements-dev.txt (line 2))
+  Using cached pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+Collecting pygments>=2.7.2 (from pytest==9.1.1->-r requirements-dev.txt (line 2))
+  Using cached pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Using cached pyyaml-6.0.3-cp314-cp314-macosx_11_0_arm64.whl (173 kB)
+Using cached pytest-9.1.1-py3-none-any.whl (386 kB)
+Using cached pluggy-1.7.0-py3-none-any.whl (27 kB)
+Using cached iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Using cached pygments-2.21.0-py3-none-any.whl (1.3 MB)
+Installing collected packages: pyyaml, pygments, pluggy, packaging, iniconfig, pytest
+
+Successfully installed iniconfig-2.3.1 packaging-26.3 pluggy-1.7.0 pygments-2.21.0 pytest-9.1.1 pyyaml-6.0.3
+EXIT_CODE 0
+ELAPSED_S 1.537161083000683
+END_UTC 2026-10-22T03:04:14.010933+00:00

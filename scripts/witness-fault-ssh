@@ -1,0 +1,8 @@
+#!/bin/sh
+# Forced command for user witness-fault on witness-field (authorized_keys command=...).
+# The runner on witness-ctl may ONLY run witness-faultctl, which validates every word
+# against an allow-list. No shell evaluation of the client's command happens here.
+set -f
+[ -n "${SSH_ORIGINAL_COMMAND:-}" ] || { echo '{"ok": false, "error": "no command"}'; exit 2; }
+# shellcheck disable=SC2086  # deliberate word splitting into argv; faultctl validates each word
+exec /usr/bin/sudo -n /usr/local/sbin/witness-faultctl $SSH_ORIGINAL_COMMAND

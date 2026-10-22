@@ -1,0 +1,158 @@
+{
+  "zip_sha256": "32d2b7e00cb49f80861910b739cd1db3b1fc6ff645df767b363c5b5155157293",
+  "source": "f09aa6322e5b8d923b9219b5f90ba32f50b17c0a",
+  "source_manifest_sha256": "fdf6eb9774b58f34aea90e67eb5275ba8748c2584a5cfeb62da0bfab4a628962",
+  "checks": [
+    {
+      "label": "shell-checksum-verification",
+      "argv": [
+        "/bin/bash",
+        "/var/folders/dd/_0m6p2495bb34dznkbp594fr0000gn/T/Witness portable extraction with spaces sdg9fywr/new and different name/Witness-Reproduction-f09aa63/RUN_ON_THIS_MAC.sh",
+        "--verify"
+      ],
+      "utc_start": "2026-10-22T02:48:21.736847+00:00",
+      "utc_end": "2026-10-22T02:48:21.817648+00:00",
+      "timeout_s": 60,
+      "elapsed_s": 0.0807005830010894,
+      "exit_status": 0,
+      "ok": true
+    },
+    {
+      "label": "launcher-cli-help",
+      "argv": [
+        "<builder-home>/Desktop/Witness/witness-lab/.venv/bin/python",
+        "/var/folders/dd/_0m6p2495bb34dznkbp594fr0000gn/T/Witness portable extraction with spaces sdg9fywr/new and different name/Witness-Reproduction-f09aa63/launcher.py",
+        "--help"
+      ],
+      "utc_start": "2026-10-22T02:48:21.818106+00:00",
+      "utc_end": "2026-10-22T02:48:21.886761+00:00",
+      "timeout_s": 60,
+      "elapsed_s": 0.06867920799959393,
+      "exit_status": 0,
+      "ok": true
+    },
+    {
+      "label": "official-lima-version",
+      "argv": [
+        "/var/folders/dd/_0m6p2495bb34dznkbp594fr0000gn/T/Witness portable extraction with spaces sdg9fywr/tools/bin/limactl",
+        "--version"
+      ],
+      "utc_start": "2026-10-22T02:48:22.140096+00:00",
+      "utc_end": "2026-10-22T02:48:22.743718+00:00",
+      "timeout_s": 60,
+      "elapsed_s": 0.6036639579997427,
+      "exit_status": 0,
+      "ok": true
+    },
+    {
+      "label": "empty-private-vm-inventory",
+      "argv": [
+        "/var/folders/dd/_0m6p2495bb34dznkbp594fr0000gn/T/Witness portable extraction with spaces sdg9fywr/tools/bin/limactl",
+        "list",
+        "--format",
+        "{{.Name}}"
+      ],
+      "utc_start": "2026-10-22T02:48:22.744175+00:00",
+      "utc_end": "2026-10-22T02:48:22.769167+00:00",
+      "timeout_s": 60,
+      "elapsed_s": 0.02503870799955621,
+      "exit_status": 0,
+      "ok": true
+    },
+    {
+      "label": "private-network-config-witness-mgmt",
+      "argv": [
+        "/var/folders/dd/_0m6p2495bb34dznkbp594fr0000gn/T/Witness portable extraction with spaces sdg9fywr/tools/bin/limactl",
+        "network",
+        "create",
+        "witness-mgmt",
+        "--mode",
+        "user-v2",
+        "--gateway",
+        "10.77.0.1/24"
+      ],
+      "utc_start": "2026-10-22T02:48:22.769660+00:00",
+      "utc_end": "2026-10-22T02:48:22.809778+00:00",
+      "timeout_s": 60,
+      "elapsed_s": 0.04016129200135765,
+      "exit_status": 0,
+      "ok": true
+    },
+    {
+      "label": "private-network-config-witness",
+      "argv": [
+        "/var/folders/dd/_0m6p2495bb34dznkbp594fr0000gn/T/Witness portable extraction with spaces sdg9fywr/tools/bin/limactl",
+        "network",
+        "create",
+        "witness",
+        "--mode",
+        "user-v2",
+        "--gateway",
+        "10.77.1.1/24"
+      ],
+      "utc_start": "2026-10-22T02:48:22.810186+00:00",
+      "utc_end": "2026-10-22T02:48:22.848319+00:00",
+      "timeout_s": 60,
+      "elapsed_s": 0.038171750000401516,
+      "exit_status": 0,
+      "ok": true
+    },
+    {
+      "label": "native-config-validate-witness-ctl",
+      "argv": [
+        "/var/folders/dd/_0m6p2495bb34dznkbp594fr0000gn/T/Witness portable extraction with spaces sdg9fywr/tools/bin/limactl",
+        "validate",
+        "/var/folders/dd/_0m6p2495bb34dznkbp594fr0000gn/T/Witness portable extraction with spaces sdg9fywr/witness-ctl.yaml"
+      ],
+      "utc_start": "2026-10-22T02:48:22.848960+00:00",
+      "utc_end": "2026-10-22T02:48:22.887436+00:00",
+      "timeout_s": 60,
+      "elapsed_s": 0.03851770800065424,
+      "exit_status": 0,
+      "ok": true
+    },
+    {
+      "label": "native-config-validate-witness-field",
+      "argv": [
+        "/var/folders/dd/_0m6p2495bb34dznkbp594fr0000gn/T/Witness portable extraction with spaces sdg9fywr/tools/bin/limactl",
+        "validate",
+        "/var/folders/dd/_0m6p2495bb34dznkbp594fr0000gn/T/Witness portable extraction with spaces sdg9fywr/witness-field.yaml"
+      ],
+      "utc_start": "2026-10-22T02:48:22.888151+00:00",
+      "utc_end": "2026-10-22T02:48:22.920746+00:00",
+      "timeout_s": 60,
+      "elapsed_s": 0.032628625000143074,
+      "exit_status": 0,
+      "ok": true
+    },
+    {
+      "label": "exact-recipient-command-resource-refusal",
+      "argv": [
+        "/bin/bash",
+        "-c",
+        "/bin/bash -c 'set -e; cd \"$HOME/Downloads\"; if [ ! -e Witness-Handoff-v1 ]; then /usr/bin/ditto -x -k Witness-Reproduction-f09aa63-v1.zip Witness-Handoff-v1; fi; /usr/bin/unzip -p Witness-Reproduction-f09aa63-v1.zip Witness-Reproduction-f09aa63/SHA256SUMS | /usr/bin/cmp - Witness-Handoff-v1/Witness-Reproduction-f09aa63/SHA256SUMS; exec /bin/bash Witness-Handoff-v1/Witness-Reproduction-f09aa63/RUN_ON_THIS_MAC.sh'"
+      ],
+      "utc_start": "2026-10-22T02:48:22.927122+00:00",
+      "utc_end": "2026-10-22T02:48:23.053473+00:00",
+      "timeout_s": 60,
+      "elapsed_s": 0.12637508300031186,
+      "exit_status": 2,
+      "ok": true
+    },
+    {
+      "label": "same-command-repeat-safe",
+      "argv": [
+        "/bin/bash",
+        "-c",
+        "/bin/bash -c 'set -e; cd \"$HOME/Downloads\"; if [ ! -e Witness-Handoff-v1 ]; then /usr/bin/ditto -x -k Witness-Reproduction-f09aa63-v1.zip Witness-Handoff-v1; fi; /usr/bin/unzip -p Witness-Reproduction-f09aa63-v1.zip Witness-Reproduction-f09aa63/SHA256SUMS | /usr/bin/cmp - Witness-Handoff-v1/Witness-Reproduction-f09aa63/SHA256SUMS; exec /bin/bash Witness-Handoff-v1/Witness-Reproduction-f09aa63/RUN_ON_THIS_MAC.sh'"
+      ],
+      "utc_start": "2026-10-22T02:48:23.053998+00:00",
+      "utc_end": "2026-10-22T02:48:23.125043+00:00",
+      "timeout_s": 60,
+      "elapsed_s": 0.07108816600157297,
+      "exit_status": 2,
+      "ok": true
+    }
+  ],
+  "vm_campaign": "UNTESTED: no VM was started or created"
+}

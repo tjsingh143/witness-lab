@@ -1,0 +1,14 @@
+Save Witness-Reproduction-f09aa63-v1.zip in Downloads, then paste this ONE command into Terminal:
+
+/bin/bash -c 'set -e; cd "$HOME/Downloads"; if [ ! -e Witness-Handoff-v1 ]; then /usr/bin/ditto -x -k Witness-Reproduction-f09aa63-v1.zip Witness-Handoff-v1; fi; /usr/bin/unzip -p Witness-Reproduction-f09aa63-v1.zip Witness-Reproduction-f09aa63/SHA256SUMS | /usr/bin/cmp - Witness-Handoff-v1/Witness-Reproduction-f09aa63/SHA256SUMS; exec /bin/bash Witness-Handoff-v1/Witness-Reproduction-f09aa63/RUN_ON_THIS_MAC.sh'
+
+Read the operation summary and type WITNESS to consent. Requires a native Apple Silicon Mac, macOS 13+, at least 16 GiB RAM and 40 GiB free disk (more if the measured full-copy reserve requires it). Use AC power. Allow several hours and internet downloads from GitHub, Ubuntu and, only if Python is missing, Python.org. No AI subscription or access to the original Mac is needed.
+
+The same command resumes an interrupted run. It does not overwrite an existing extraction directory; a different/missing package is refused. If macOS asks for permission, read the prompt. A missing Python may require your administrator password for the signed Python Software Foundation installer. No security protections are disabled.
+
+Report: ~/Wit-f09aa63.nosync/output/COMPLETION_REPORT.md
+
+After reviewing the report and the privacy note in HANDOFF.md, create the return ZIP with:
+/bin/bash "$HOME/Downloads/Witness-Handoff-v1/Witness-Reproduction-f09aa63/RETURN_RESULTS.sh"
+
+Send back only the Witness-Return-*.zip whose exact path and SHA-256 that command prints. It contains this run's output, never VM disks, SSH keys, your home folder or unrelated projects. Logs can still identify your Mac username/hostname; review them before sharing. A blocked or failed experiment stays visible.

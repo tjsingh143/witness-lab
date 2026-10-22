@@ -1,0 +1,9 @@
+START_UTC 2026-10-22T03:06:27.993603+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab
+ARGV ["dist/github-publication/.venv/bin/python", "-B", "-m", "pytest", "-q", "-p", "no:cacheprovider", "tests/unit/test_acceptance.py::test_catalog_counts_are_consistent_with_readme_and_report"]
+TIMEOUT_S 60.0
+.                                                                        [100%]
+1 passed in 1.72s
+EXIT_CODE 0
+ELAPSED_S 2.0366201249998994
+END_UTC 2026-10-22T03:06:30.030068+00:00

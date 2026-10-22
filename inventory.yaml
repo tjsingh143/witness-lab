@@ -1,0 +1,43 @@
+# Witness expected inventory: the source of truth for commissioning.
+# Validated by: python3 scripts/lib/inventory.py validate inventory.yaml
+# Device rows are copied verbatim from PROJECT_BRIEF.md section 4.4.
+schema_version: 1
+
+devices:
+  - device_id: dev-a
+    hostname: dev-a.lab
+    address: 10.77.2.11
+    port: 5020
+    serial: WIT-0001
+    fw_version: 1.0.0
+    instance: a            # systemd instance name: witness-device@a
+  - device_id: dev-b
+    hostname: dev-b.lab
+    address: 10.77.2.12
+    port: 5020
+    serial: WIT-0002
+    fw_version: 1.0.0
+    instance: b            # systemd instance name: witness-device@b
+
+# Lab topology. Not part of the brief's device table, but every provisioning
+# script reads it from here so addresses exist in exactly one place.
+lab:
+  hypervisor: lima          # UTM not installed on this host; see docs/lab-record.md
+  # Lima networks live in the PRIVATE $REPO/.lima.nosync/_config/networks.yaml.
+  mgmt_network: witness-mgmt  # user-v2, first NIC = guest eth0 (DHCP); Lima's SSH fallback only
+  mgmt_subnet: 10.77.0.0/24
+  lima_network: witness     # user-v2, second NIC = guest lab0 (pinned MAC, static address)
+  l2_subnet: 10.77.1.0/24   # VM-to-VM lab segment; chosen not to overlap host 10.5/16, 10.8/16
+  l2_gateway: 10.77.1.2     # gvproxy's own address (OBSERVED: Lima passes only --subnet; gvproxy
+                            # takes .2 and leases DHCP from .1). Never used as a route.
+  device_subnet: 10.77.2.0/24
+  device_interface: field0  # dummy interface on VM-B
+  vms:
+    - name: witness-ctl
+      role: ctl             # VM-A: gateway, runner, SQLite
+      mac: "52:55:55:77:01:10"
+      l2_address: 10.77.1.10
+    - name: witness-field
+      role: field           # VM-B: device processes, faults
+      mac: "52:55:55:77:01:20"
+      l2_address: 10.77.1.20

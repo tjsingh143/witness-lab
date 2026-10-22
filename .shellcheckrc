@@ -1,0 +1,5 @@
+# Repo-wide ShellCheck settings (run: shellcheck -x scripts/*.sh scripts/lib/*.sh from repo root).
+# SC2015: the scripts use `test && pass ... || fail ...` where pass/log/ok always return 0,
+# so the `|| C` branch only runs when the test fails.
+disable=SC2015
+external-sources=true

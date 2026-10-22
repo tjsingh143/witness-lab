@@ -1,0 +1,8 @@
+START_UTC 2026-10-22T02:48:21.560859+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab
+ARGV [".venv/bin/python", "-B", "handoff/verify_build.py", "--zip", "dist/Witness-Reproduction-f09aa63-v1.zip", "--lima-archive", "/tmp/witness-lima-2.2.0.tar.gz", "--out", "results/final-release-20261021/native"]
+TIMEOUT_S 300.0
+{"checks": 10, "all_pass": true, "vm_campaign": "UNTESTED: no VM was started or created"}
+EXIT_CODE 0
+ELAPSED_S 1.6099712920004094
+END_UTC 2026-10-22T02:48:23.170688+00:00

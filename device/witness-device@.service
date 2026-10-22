@@ -1,0 +1,42 @@
+# Witness simulated sensor device (software simulation over real TCP; not hardware/firmware).
+# Installed by scripts/provision_field.sh to /etc/systemd/system/witness-device@.service.
+# Instance %i = inventory.yaml `instance` (a, b). Identity and bind address come from
+# /etc/witness/device-%i.env (generated from inventory.yaml at provisioning).
+#   start/stop/restart: systemctl start|stop|restart witness-device@a
+#   status/logs:        systemctl status witness-device@a ; journalctl -u witness-device@a --since -10min
+#   fault mode (F10):   via witness-faultctl apply|revert mode a <mode> (SIGHUP + root-owned
+#                       /run/witness-fault/device-%i.mode; the device only reads it)
+[Unit]
+Description=Witness simulated sensor device %i (TCP 5020, protocol v1)
+Documentation=file:/opt/witness-lab/docs/protocol.md
+After=network.target systemd-networkd.service
+StartLimitIntervalSec=60
+StartLimitBurst=10
+
+[Service]
+Type=notify
+NotifyAccess=main
+EnvironmentFile=/etc/witness/device-%i.env
+Environment=WITNESS_MODE_FILE=/run/witness-fault/device-%i.mode
+# "+" = runs as root: a fresh process never inherits a fault mode.
+ExecStartPre=+/bin/rm -f /run/witness-fault/device-%i.mode
+ExecStart=/usr/bin/python3 -u /usr/local/lib/witness/device.py --instance %i
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=1
+TimeoutStartSec=40
+TimeoutStopSec=5
+KillSignal=SIGTERM
+DynamicUser=yes
+RuntimeDirectory=witness-device-%i
+RuntimeDirectoryMode=0755
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+RestrictAddressFamilies=AF_INET AF_UNIX
+SyslogIdentifier=witness-device@%i
+
+[Install]
+WantedBy=multi-user.target

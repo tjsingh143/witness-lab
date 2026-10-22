@@ -1,0 +1,37 @@
+START_UTC 2026-10-21T07:56:01.937478+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab
+ARGV ["caffeinate", "-i", "scripts/lab_vms.sh", "suite", "baseline", "--db", "/var/lib/witness/overnight-20261021-071813/current/witness.db", "--evidence-root", "/var/lib/witness/overnight-20261021-071813/current/evidence", "--run-notes", "overnight final committed revision current-baseline"]
+TIMEOUT_S 360.0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /opt/witness-lab
+configfile: pytest.ini
+collected 35 items / 24 deselected / 11 selected
+
+tests/live/test_commissioning.py .........                               [ 81%]
+tests/live/test_gateway_cases.py ..                                      [100%]
+
+==================================== PASSES ====================================
+_____________________________ test_identify[dev-a] _____________________________
+---------------------------- Captured stderr setup -----------------------------
+
+witness run_id=1 kind=baseline preflight=GREEN evidence=/var/lib/witness/overnight-20261021-071813/current/evidence/run-1
+--------------------------- Captured stderr teardown ---------------------------
+
+witness run_id=1 finished clean_env=1 contaminated=0
+=========================== short test summary info ============================
+PASSED tests/live/test_commissioning.py::test_identify[dev-a]
+PASSED tests/live/test_commissioning.py::test_identify[dev-b]
+PASSED tests/live/test_commissioning.py::test_health[dev-a]
+PASSED tests/live/test_commissioning.py::test_health[dev-b]
+PASSED tests/live/test_commissioning.py::test_read_clock_window[dev-a]
+PASSED tests/live/test_commissioning.py::test_read_clock_window[dev-b]
+PASSED tests/live/test_commissioning.py::test_read_series_monotonic[dev-a]
+PASSED tests/live/test_commissioning.py::test_read_series_monotonic[dev-b]
+PASSED tests/live/test_commissioning.py::test_environment_recorded
+PASSED tests/live/test_gateway_cases.py::test_gateway_reports_device_healthy[dev-a]
+PASSED tests/live/test_gateway_cases.py::test_gateway_reports_device_healthy[dev-b]
+====================== 11 passed, 24 deselected in 23.82s ======================
+EXIT_CODE 0
+ELAPSED_S 24.841785083990544
+END_UTC 2026-10-21T07:56:26.778430+00:00

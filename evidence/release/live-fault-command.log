@@ -1,0 +1,50 @@
+START_UTC 2026-10-21T07:57:44.966752+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab
+ARGV ["caffeinate", "-i", "scripts/lab_vms.sh", "suite", "fault", "--db", "/var/lib/witness/overnight-20261021-071813/current/witness.db", "--evidence-root", "/var/lib/witness/overnight-20261021-071813/current/evidence", "--run-notes", "overnight final committed revision current-faults"]
+TIMEOUT_S 360.0
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /opt/witness-lab
+configfile: pytest.ini
+collected 35 items / 11 deselected / 24 selected
+
+tests/live/test_faults.py ....................                           [ 83%]
+tests/live/test_gateway_cases.py ....                                    [100%]
+
+==================================== PASSES ====================================
+___________________________ test_f1_process_stopped ____________________________
+---------------------------- Captured stderr setup -----------------------------
+
+witness run_id=2 kind=fault preflight=GREEN evidence=/var/lib/witness/overnight-20261021-071813/current/evidence/run-2
+--------------------------- Captured stderr teardown ---------------------------
+
+witness run_id=2 finished clean_env=1 contaminated=0
+=========================== short test summary info ============================
+PASSED tests/live/test_faults.py::test_f1_process_stopped
+PASSED tests/live/test_faults.py::test_f2_sigstop_hung
+PASSED tests/live/test_faults.py::test_f6_delay_300
+PASSED tests/live/test_faults.py::test_f6_delay_3000_all
+PASSED tests/live/test_faults.py::test_f6_delay_3000_post_handshake
+PASSED tests/live/test_faults.py::test_f7_name_points_at_wrong_device
+PASSED tests/live/test_faults.py::test_f7_name_missing
+PASSED tests/live/test_faults.py::test_f10_malformed
+PASSED tests/live/test_faults.py::test_f10_truncated
+PASSED tests/live/test_faults.py::test_f10_wrong_id
+PASSED tests/live/test_faults.py::test_f3_wrong_port_in_inventory
+PASSED tests/live/test_faults.py::test_f4_wrong_address_unused
+PASSED tests/live/test_faults.py::test_f5_route_deleted
+PASSED tests/live/test_faults.py::test_f8_nft_drop
+PASSED tests/live/test_faults.py::test_f9_nft_reject_syn
+PASSED tests/live/test_faults.py::test_f9_nft_reject_after_handshake
+PASSED tests/live/test_faults.py::test_f11_mid_session_fin
+PASSED tests/live/test_faults.py::test_f11_mid_session_rst
+PASSED tests/live/test_faults.py::test_f13_clock_skew
+PASSED tests/live/test_faults.py::test_f13_repeat_seq
+PASSED tests/live/test_gateway_cases.py::test_gateway_detects_stopped_device
+PASSED tests/live/test_gateway_cases.py::test_gateway_detects_route_loss
+PASSED tests/live/test_gateway_cases.py::test_gateway_detects_silent_drop
+PASSED tests/live/test_gateway_cases.py::test_f12_restart_during_polls
+================ 24 passed, 11 deselected in 110.49s (0:01:50) =================
+EXIT_CODE 0
+ELAPSED_S 111.64353241596837
+END_UTC 2026-10-21T07:59:36.606905+00:00

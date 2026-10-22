@@ -1,0 +1,46 @@
+# Lima instance template for the Witness lab VMs (rendered by scripts/lab_vms.sh).
+# @NAME@, @MAC@, @NETWORK@, @MGMT_NETWORK@ are substituted from inventory.yaml.
+minimumLimaVersion: 2.0.0
+# Same release/digest used by the verified lab and portable handoff. The dated
+# cloud-images URL now redirects to HTTP; use the archive bucket's HTTPS endpoint.
+images:
+  - location: https://s3.amazonaws.com/cloud-images-archive.ubuntu.com/releases/noble/release-20260705/ubuntu-24.04-server-cloudimg-arm64.img
+    arch: aarch64
+    digest: sha256:7df0201546f75b8bcc1044594c806c35749421ad3c9bc1be2a3ab806cfae39cc
+
+vmType: vz
+arch: aarch64
+cpus: 1
+memory: 1GiB
+disk: 10GiB
+
+# Isolation: no host file sharing, no containerd, no automatic port forwarding
+# of guest services to the Mac. Management is `limactl shell`, SSH over vsock
+# (vz default), which does not depend on the guest's IP networking.
+mounts: []
+containerd:
+  system: false
+  user: false
+propagateProxyEnv: false   # never copy host proxy settings into the guests
+ssh:
+  loadDotSSHPubKeys: false
+  forwardAgent: false
+portForwards:
+  - guestIP: "0.0.0.0"
+    proto: any
+    ignore: true
+  - guestIP: "127.0.0.1"
+    proto: any
+    ignore: true
+
+# Two NICs, both Lima user-v2 (gvproxy) networks in the private LIMA_HOME.
+# OBSERVED (Lima 2.2.0, vz): the FIRST user-v2 network replaces Lima's default
+# usernet as guest eth0, with a Lima-derived MAC and DHCP; Lima's SSH fallback
+# forwarder targets that DHCP lease. So eth0 = management only.
+# The second NIC is the dedicated lab L2 (VM<->VM): pinned MAC = the hardware
+# identity checked by every guest script, renamed lab0, statically addressed.
+networks:
+  - lima: @MGMT_NETWORK@
+  - lima: @NETWORK@
+    macAddress: "@MAC@"
+    interface: lab0

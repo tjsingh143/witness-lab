@@ -1,0 +1,2639 @@
+START_UTC 2026-10-22T03:04:46.260190+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab/dist/github-publication
+ARGV [".venv/bin/python", "-B", "-m", "pytest", "-q", "-p", "no:cacheprovider", "tests/unit", "tests/test_inventory.py", "handoff/tests"]
+TIMEOUT_S 600.0
+............................................F........................... [ 11%]
+........................................................................ [ 22%]
+........................................................................ [ 33%]
+........................................................................ [ 44%]
+........................................................................ [ 55%]
+........................................................................ [ 66%]
+........................................................................ [ 78%]
+........................................................................ [ 89%]
+..............................EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE   [100%]
+==================================== ERRORS ====================================
+______________ ERROR at setup of Portable.test_15gib_disk_blocked ______________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+______________ ERROR at setup of Portable.test_8gib_host_blocked _______________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+__ ERROR at setup of Portable.test_atomic_checkpoint_and_resume_skips_success __
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+________ ERROR at setup of Portable.test_blocked_retry_retains_attempt _________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+________ ERROR at setup of Portable.test_claimed_vm_symlink_is_refused _________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_______ ERROR at setup of Portable.test_command_logging_real_subprocess ________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_ ERROR at setup of Portable.test_command_timeout_is_failure_with_retained_exit _
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_ ERROR at setup of Portable.test_continuation_fetches_surviving_guest_before_push _
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_ ERROR at setup of Portable.test_entry_resource_refusal_is_non_destructive_on_builder _
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+__________ ERROR at setup of Portable.test_escaping_symlink_rejected ___________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+______________ ERROR at setup of Portable.test_exclusive_lab_lock ______________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+____________ ERROR at setup of Portable.test_executable_permissions ____________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_____ ERROR at setup of Portable.test_export_integrity_and_original_source _____
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_________ ERROR at setup of Portable.test_floor_and_critical_pressure __________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+________ ERROR at setup of Portable.test_full_copy_gate_no_apfs_credit _________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+___ ERROR at setup of Portable.test_initial_sync_uses_existing_root_workdir ____
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_ ERROR at setup of Portable.test_isolated_environment_ignores_inherited_lima __
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_________ ERROR at setup of Portable.test_manifest_traversal_rejected __________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_________ ERROR at setup of Portable.test_missing_source_file_rejected _________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+________ ERROR at setup of Portable.test_monitor_block_terminates_child ________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+______ ERROR at setup of Portable.test_no_evidence_disks_keys_or_symlinks ______
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_____ ERROR at setup of Portable.test_older_guest_cannot_overwrite_master ______
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+__ ERROR at setup of Portable.test_replacement_interrupted_delete_is_retried ___
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_ ERROR at setup of Portable.test_replacement_transaction_resumes_same_creation _
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_ ERROR at setup of Portable.test_report_cannot_grant_full_without_all_experiments _
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+___________ ERROR at setup of Portable.test_resource_supported_entry ___________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_____ ERROR at setup of Portable.test_return_archive_includes_only_output ______
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+______ ERROR at setup of Portable.test_return_rejects_credential_pattern _______
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+____________ ERROR at setup of Portable.test_return_rejects_symlink ____________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+____ ERROR at setup of Portable.test_route_conflicts_include_vpn_aggregate _____
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_ ERROR at setup of Portable.test_safety_commands_can_run_when_resource_gate_is_red _
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+__ ERROR at setup of Portable.test_same_named_but_unclaimed_instance_refused ___
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+__ ERROR at setup of Portable.test_shell_syntax_and_extracted_relative_paths ___
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+________ ERROR at setup of Portable.test_source_owner_mismatch_refused _________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_________ ERROR at setup of Portable.test_swap_trend_and_absolute_gate _________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+____________ ERROR at setup of Portable.test_tampered_file_rejected ____________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+________ ERROR at setup of Portable.test_unexpected_extra_file_rejected ________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+__________ ERROR at setup of Portable.test_unowned_directory_refused ___________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_ ERROR at setup of Portable.test_unrelated_private_lima_instance_refused_without_deletion _
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+_____________ ERROR at setup of Portable.test_work_symlink_refused _____________
+
+cls = <class 'test_portable.Portable'>
+
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='witness-extracted-different-name-')
+        cls.root = Path(cls.temp.name)
+        cls.zip = Path(os.environ.get('WITNESS_TEST_ZIP', str(HANDOFF.parent/'dist'/B.ZIP_NAME))).resolve()
+>       with zipfile.ZipFile(cls.zip) as z:
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+handoff/tests/test_portable.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+mode = 'r', compression = 0, allowZip64 = True, compresslevel = None
+strict_timestamps = True, metadata_encoding = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create
+        'x', or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+
+        _check_compression(compression)
+
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   FileNotFoundError: [Errno 2] No such file or directory: '<builder-home>/Desktop/Witness/witness-lab/dist/github-publication/dist/Witness-Reproduction-f09aa63-v1.zip'
+
+<builder-home>/.pyenv/versions/3.14.7/lib/python3.14/zipfile/__init__.py:1462: FileNotFoundError
+=================================== FAILURES ===================================
+__________ test_catalog_counts_are_consistent_with_readme_and_report ___________
+
+store = (<sqlite3.Connection object at 0x107527880>, {'fresh': [1, 2, 3, 4, 5], 'fault': 6, 'mutants': [7, 8, 9, 10, 11, 12], 'final': 13})
+
+    def test_catalog_counts_are_consistent_with_readme_and_report(store):
+        """Independent audit F-08: 13 fault types, 21 variants, 24 live fault-test instances, all catalog-derived."""
+        conn, _ = store
+        c = catalog.counts(len(DEVICES))
+        assert (c["fault_types"], c["fault_variants"], c["fault_test_instances"]) == (13, 21, 24)
+        readme = (REPO / "README.md").read_text()
+        for n, what in ((13, "fault types"), (21, "fault variants"), (24, "live fault-test instances")):
+>           assert re.search(rf"\b{n} {what}\b", readme), what
+E           AssertionError: fault variants
+E           assert None
+E            +  where None = <function search at 0x105feba00>('\\b21 fault variants\\b', '# Witness\n\n**Linux device commissioning and fault injection, with evidence you can inspect.**\n\nWitness checks whe...ly superseded |\n| [Original brief](PROJECT_BRIEF.md) | Immutable original scope; its initial status is historical |\n')
+E            +    where <function search at 0x105feba00> = re.search
+
+tests/unit/test_acceptance.py:200: AssertionError
+=========================== short test summary info ============================
+FAILED tests/unit/test_acceptance.py::test_catalog_counts_are_consistent_with_readme_and_report
+ERROR handoff/tests/test_portable.py::Portable::test_15gib_disk_blocked - Fil...
+ERROR handoff/tests/test_portable.py::Portable::test_8gib_host_blocked - File...
+ERROR handoff/tests/test_portable.py::Portable::test_atomic_checkpoint_and_resume_skips_success
+ERROR handoff/tests/test_portable.py::Portable::test_blocked_retry_retains_attempt
+ERROR handoff/tests/test_portable.py::Portable::test_claimed_vm_symlink_is_refused
+ERROR handoff/tests/test_portable.py::Portable::test_command_logging_real_subprocess
+ERROR handoff/tests/test_portable.py::Portable::test_command_timeout_is_failure_with_retained_exit
+ERROR handoff/tests/test_portable.py::Portable::test_continuation_fetches_surviving_guest_before_push
+ERROR handoff/tests/test_portable.py::Portable::test_entry_resource_refusal_is_non_destructive_on_builder
+ERROR handoff/tests/test_portable.py::Portable::test_escaping_symlink_rejected
+ERROR handoff/tests/test_portable.py::Portable::test_exclusive_lab_lock - Fil...
+ERROR handoff/tests/test_portable.py::Portable::test_executable_permissions
+ERROR handoff/tests/test_portable.py::Portable::test_export_integrity_and_original_source
+ERROR handoff/tests/test_portable.py::Portable::test_floor_and_critical_pressure
+ERROR handoff/tests/test_portable.py::Portable::test_full_copy_gate_no_apfs_credit
+ERROR handoff/tests/test_portable.py::Portable::test_initial_sync_uses_existing_root_workdir
+ERROR handoff/tests/test_portable.py::Portable::test_isolated_environment_ignores_inherited_lima
+ERROR handoff/tests/test_portable.py::Portable::test_manifest_traversal_rejected
+ERROR handoff/tests/test_portable.py::Portable::test_missing_source_file_rejected
+ERROR handoff/tests/test_portable.py::Portable::test_monitor_block_terminates_child
+ERROR handoff/tests/test_portable.py::Portable::test_no_evidence_disks_keys_or_symlinks
+ERROR handoff/tests/test_portable.py::Portable::test_older_guest_cannot_overwrite_master
+ERROR handoff/tests/test_portable.py::Portable::test_replacement_interrupted_delete_is_retried
+ERROR handoff/tests/test_portable.py::Portable::test_replacement_transaction_resumes_same_creation
+ERROR handoff/tests/test_portable.py::Portable::test_report_cannot_grant_full_without_all_experiments
+ERROR handoff/tests/test_portable.py::Portable::test_resource_supported_entry
+ERROR handoff/tests/test_portable.py::Portable::test_return_archive_includes_only_output
+ERROR handoff/tests/test_portable.py::Portable::test_return_rejects_credential_pattern
+ERROR handoff/tests/test_portable.py::Portable::test_return_rejects_symlink
+ERROR handoff/tests/test_portable.py::Portable::test_route_conflicts_include_vpn_aggregate
+ERROR handoff/tests/test_portable.py::Portable::test_safety_commands_can_run_when_resource_gate_is_red
+ERROR handoff/tests/test_portable.py::Portable::test_same_named_but_unclaimed_instance_refused
+ERROR handoff/tests/test_portable.py::Portable::test_shell_syntax_and_extracted_relative_paths
+ERROR handoff/tests/test_portable.py::Portable::test_source_owner_mismatch_refused
+ERROR handoff/tests/test_portable.py::Portable::test_swap_trend_and_absolute_gate
+ERROR handoff/tests/test_portable.py::Portable::test_tampered_file_rejected
+ERROR handoff/tests/test_portable.py::Portable::test_unexpected_extra_file_rejected
+ERROR handoff/tests/test_portable.py::Portable::test_unowned_directory_refused
+ERROR handoff/tests/test_portable.py::Portable::test_unrelated_private_lima_instance_refused_without_deletion
+ERROR handoff/tests/test_portable.py::Portable::test_work_symlink_refused - F...
+1 failed, 605 passed, 40 errors in 185.85s (0:03:05)
+EXIT_CODE 1
+ELAPSED_S 186.23773745799917
+END_UTC 2026-10-22T03:07:52.492108+00:00

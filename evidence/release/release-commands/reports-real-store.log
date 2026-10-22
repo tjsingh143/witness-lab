@@ -1,0 +1,14 @@
+START_UTC 2026-10-22T02:48:56.613531+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab
+ARGV [".venv/bin/python", "-B", "-m", "runner.report", "--db", "results/overnight-witness-20261021/execution-20261021T071813Z/vm/current/witness.db", "--evidence-root", "results/overnight-witness-20261021/execution-20261021T071813Z/vm/current/evidence", "--out-dir", "results/final-release-20261021/reports"]
+TIMEOUT_S 300.0
+wrote results/final-release-20261021/reports/commissioning-report.md (66035 bytes)
+wrote results/final-release-20261021/reports/traceability.md (8093 bytes)
+wrote results/final-release-20261021/reports/baseline-report.md (1412 bytes)
+wrote results/final-release-20261021/reports/fault-report.md (24651 bytes)
+wrote results/final-release-20261021/reports/mutant-report.md (9981 bytes)
+wrote results/final-release-20261021/reports/acceptance-audit.md (8090 bytes)
+wrote results/final-release-20261021/reports/acceptance-audit.json (8918 bytes)
+EXIT_CODE 0
+ELAPSED_S 0.4931616670000949
+END_UTC 2026-10-22T02:48:57.098103+00:00

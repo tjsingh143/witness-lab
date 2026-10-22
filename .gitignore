@@ -1,0 +1,48 @@
+# VM state, disks and keys (private Lima home)
+.lima.nosync/
+*.qcow2
+*.img
+*.iso
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Results: databases and captures are generated evidence, not source
+results/*.db
+results/captures/
+*.pcap
+*.pcapng
+# Secrets
+id_*
+!id_*.pub
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+!.env.*.example
+# Claude Code local state
+.claude/settings.local.json
+.claude/.cc-writes/
+# results DB copies kept by results-push/fetch (binary, regenerated)
+results/*.db.*
+# separate audit/remediation stores and archives under results/ (binary; kept on disk with SHA256SUMS)
+results/**/*.db
+results/**/*.tar
+# macOS Finder metadata
+.DS_Store
+# Portable release output is locally delivered and sealed, never a source input.
+/dist/
+# Generated stores and archives at any depth (text examples are curated separately).
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.tar
+*.tar.gz
+*.zip
+*.vmdk
+*.raw

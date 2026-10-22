@@ -1,0 +1,14 @@
+START_UTC 2026-10-22T03:03:28.539755+00:00
+CWD <builder-home>/Desktop/Witness/witness-lab/dist/github-publication
+ARGV ["python3.14", "-m", "venv", "--clear", ".venv"]
+TIMEOUT_S 120.0
+pyenv: python3.14: command not found
+
+The `python3.14' command exists in these Python versions:
+  3.14.7
+
+Note: See 'pyenv help global' for tips on allowing multiple
+      Python versions to be found at the same time.
+EXIT_CODE 127
+ELAPSED_S 0.24349633299789275
+END_UTC 2026-10-22T03:03:28.783147+00:00
