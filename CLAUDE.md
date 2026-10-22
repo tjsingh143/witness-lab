@@ -3,7 +3,7 @@
 # Claude Code conventions for Witness
 
 - The authoritative source is PROJECT_BRIEF.md. Read it in full at the beginning of Phase 1, and consult relevant sections each later phase. It must remain byte-for-byte unchanged.
-- The currently active phase is the corresponding `prompts/phaseN.md`; execute it, do not rewrite it as a fresh project plan. Read `docs/implementation-state.md` at the start of later phases. Document active phase and concrete evidence.
+- This published snapshot intentionally omits the original `prompts/phaseN.md` kit. Start with `README.md`, `docs/final-engineering-report.md` and the latest entries in `docs/implementation-state.md`. Follow the user's current task; do not resume an obsolete phase or infer an unrequested implementation campaign from the historical ledger.
 - Use Claude Code's built-in Read/Edit/Bash/Web tools as needed. Look up *current* UTM, Lima, Ubuntu or Linux documentation when a decision depends on a specific version or uncertain behavior; web search needs no CLI flag.
 - Default to direct tool use within this session; do not launch subagents or agent teams. Maintain a compact on-disk handoff rather than relying on chat history across sessions.
 - Before altering Linux networking, routing, nftables, process state, or traffic control, verify you are on `witness-ctl` or `witness-field`; keep a rescue console and scoped undo. Never perform disruptive fault injection on macOS.

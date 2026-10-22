@@ -21,6 +21,9 @@ python3.14 -m venv .venv
 The initial GitHub repository is private; clone access requires the owner's authorization. Once downloaded,
 source tests need no GitHub or AI service. `requirements-dev.txt` pins PyYAML 6.0.3 and pytest 9.1.1. Source and
 handoff fixture tests are CPU/local-socket/synthetic-store checks; the source-only command covers 606.
+Two offline packet-decoding cross-checks require `tcpdump` on PATH. Without it, those two checks are reported
+as **SKIPPED**; they must not be counted as passes. These checks read generated capture fixtures and do not
+provision VMs or capture live traffic.
 The additional 40 portable-package tests need the sealed release ZIP. After saving that ZIP under `dist/`, run:
 
 ```sh

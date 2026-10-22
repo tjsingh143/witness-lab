@@ -102,6 +102,8 @@ python3.14 -m venv .venv
 This source-only command covers 606 tests, including local sockets and synthetic evidence fixtures.
 The additional 40 portable-package tests require the sealed release ZIP, as described in the reproduction guide.
 These tests are not VM acceptance evidence.
+Two packet-decoding cross-checks also need `tcpdump` on PATH; pytest reports them as skipped when it is unavailable.
+They read generated capture fixtures and do not start a VM or capture live traffic.
 The complete adversarial verifier is optional for a deeper source review:
 
 ```sh

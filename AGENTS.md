@@ -15,3 +15,10 @@
 - Prioritize the phase's verified exit criteria over context-window consumption. Before heavy work, identify the evidence needed; preserve enough working capacity to test, clean up, and record state.
 - Do not guess terminal output, installation state, account permissions, addresses, clock synchronization or any real VM facts. If blocked on a manual prerequisite, report an actionable single step and preserve remaining state; never pretend it was completed.
 - The run must not modify host network routes, host firewall or unrelated service configurations. Dangerous network faults are allowed only after positive identification of dedicated VM, interface, destination and a reachable recovery console.
+
+## Published snapshot and presentation
+
+- The original phase-prompt kit is preserved locally and is intentionally absent from this publication. Read the current README and final engineering report before interpreting historical phase entries. The current release remains a partial-acceptance preview; documentation work does not close missing VM experiments.
+- Current explanations describe the implementation, observations, results and limitations directly. Add no personal or AI creator byline, ownership boast, or first-person implementation claim. This convention does not remove required third-party credits, original evidence, historical process records, Git metadata or the immutable original brief.
+- Keep review-package work bounded to the requested presentation and evidence selection. Preserve runtime code, acceptance criteria, original measurements, historical FAIL results, protected VMs and full local archives unless a separate task authorizes their modification.
+- When maintaining published documentation, update its export hashes and declare the edit in `PUBLICATION_PROVENANCE.json`. Preserve the original source object IDs and original hashes; never describe edited prose as an unchanged original record.

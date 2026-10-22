@@ -41,16 +41,18 @@
       "git_blob": "e5e58e1ac0e784e5bd581a7403fefad9b1f76bb7",
       "git_mode": "100644",
       "original_sha256": "3b25f5cac21fcd286070bea06b3d867db9d92e11acf939df9a48bb0d60c384d1",
-      "export_sha256": "3b25f5cac21fcd286070bea06b3d867db9d92e11acf939df9a48bb0d60c384d1",
-      "documentation_home_redacted": false
+      "export_sha256": "0b9769f13e2b49570f37923ac6aa34ca83e536e59dd81fc45eec0bf865286d89",
+      "documentation_home_redacted": false,
+      "publication_edit": "Post-publication instruction maintenance; original source identity and bytes remain recorded separately."
     },
     {
       "path": "CLAUDE.md",
       "git_blob": "89406b0b4274fca2c41311928d8a98e87cd1fe07",
       "git_mode": "100644",
       "original_sha256": "d3a09abbea9940a4d408fe5f608e27d7ac71b2f96feba16a02108dcf94534543",
-      "export_sha256": "d3a09abbea9940a4d408fe5f608e27d7ac71b2f96feba16a02108dcf94534543",
-      "documentation_home_redacted": false
+      "export_sha256": "53a721e5f23ee2eed591a0b3cd2fc10b27246db8dd3e812265f49225b0cecc6f",
+      "documentation_home_redacted": false,
+      "publication_edit": "Post-publication instruction maintenance; original source identity and bytes remain recorded separately."
     },
     {
       "path": "PROJECT_BRIEF.md",
@@ -73,8 +75,9 @@
       "git_blob": "d00997c2c7c1c0930854c72613b791d7d33954c0",
       "git_mode": "100644",
       "original_sha256": "938581f5f095fa88bacaad163b4238044f36e4f97283eae8bda68c5a4a22d6fb",
-      "export_sha256": "938581f5f095fa88bacaad163b4238044f36e4f97283eae8bda68c5a4a22d6fb",
-      "documentation_home_redacted": false
+      "export_sha256": "1bfb2f4d50d19d1b190e8d94bf708718df81b41bedebb58a18c08eedc17bcf44",
+      "documentation_home_redacted": false,
+      "publication_edit": "Document the optional tcpdump prerequisite and explicitly reported skips for two offline source checks."
     },
     {
       "path": "config/lima/witness-vm.yaml.tmpl",
@@ -273,8 +276,9 @@
       "git_blob": "107e20e03b64454a44472e22ff7e3dc8d08bd8c8",
       "git_mode": "100644",
       "original_sha256": "f9b9385c97a89e6fd8748cb84bbedc832cd9a99777f9698c57d616807a04f9b4",
-      "export_sha256": "f9b9385c97a89e6fd8748cb84bbedc832cd9a99777f9698c57d616807a04f9b4",
-      "documentation_home_redacted": false
+      "export_sha256": "71b4c45202041caa81000b69db0ca29e9ae223f617252a807d7a27d541d85029",
+      "documentation_home_redacted": false,
+      "publication_edit": "Document the optional tcpdump prerequisite and explicitly reported skips for two offline source checks."
     },
     {
       "path": "docs/requirements.md",
@@ -1341,5 +1345,34 @@
       "documentation_home_redacted": false
     }
   ],
-  "limitation": "File hashes and Git object names establish correspondence, not authenticity. Original Git objects are not included."
+  "limitation": "File hashes and Git object names establish correspondence, not authenticity. Original Git objects are not included.",
+  "post_publication_updates": [
+    {
+      "date_pacific": "2026-10-21",
+      "baseline_github_commit": "459cbc117d6309d9716e8e04730f73e81c7ead43",
+      "scope": "Documentation only: correct omitted phase-prompt instructions, record neutral presentation, and clarify the optional tcpdump prerequisite for two source checks. Runtime, tests, evidence, immutable brief, original hashes, release tag and acceptance status are unchanged.",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "previous_export_sha256": "3b25f5cac21fcd286070bea06b3d867db9d92e11acf939df9a48bb0d60c384d1",
+          "export_sha256": "0b9769f13e2b49570f37923ac6aa34ca83e536e59dd81fc45eec0bf865286d89"
+        },
+        {
+          "path": "CLAUDE.md",
+          "previous_export_sha256": "d3a09abbea9940a4d408fe5f608e27d7ac71b2f96feba16a02108dcf94534543",
+          "export_sha256": "53a721e5f23ee2eed591a0b3cd2fc10b27246db8dd3e812265f49225b0cecc6f"
+        },
+        {
+          "path": "README.md",
+          "previous_export_sha256": "938581f5f095fa88bacaad163b4238044f36e4f97283eae8bda68c5a4a22d6fb",
+          "export_sha256": "1bfb2f4d50d19d1b190e8d94bf708718df81b41bedebb58a18c08eedc17bcf44"
+        },
+        {
+          "path": "docs/reproduction.md",
+          "previous_export_sha256": "f9b9385c97a89e6fd8748cb84bbedc832cd9a99777f9698c57d616807a04f9b4",
+          "export_sha256": "71b4c45202041caa81000b69db0ca29e9ae223f617252a807d7a27d541d85029"
+        }
+      ]
+    }
+  ]
 }
